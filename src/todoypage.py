@@ -3,44 +3,13 @@ from PyQt4 import *
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 from time import strftime, gmtime
-#from todoyUI import Ui_MainWindow
-#duplicate bkgrnd
-#and zoom out picture in widget
-#class TodoyArea(QWidget):
-""" todoy.py 
-    for the moment just a simple paint program with a bkground"""
-USE_MAEMO = False
 
 
-#class showWindowQtGui.QMainWindow):
-#    def __init__(self, parent=None):
-#        QtGui.QWidget.__init__(self, parent)
-#        
-#        self.ui = Ui_main_window()
-#        self.ui.setupUi(self)
-#        try:
-#            self.setAttribute(Qt.WA_Maemo5StackedWindow)
-#            USE_MAEMO = True
-#        except:
-#            USE_MAEMO = False
-
-class Main(QMainWindow):
-   def __init__(self):
-         QMainWindow.__init__(self)
-         #self.ui=Ui_MainWindow()#QWidget() 
-         #self.ui.setupUi(self)
-	 #TodoyPage(self)
-	 try:
-            self.setAttribute(Qt.WA_Maemo5StackedWindow)
-            USE_MAEMO = True
-         except:
-            USE_MAEMO = False
-
-#class TodoyPage(QWidget):
-  # def __init__(self,parent):
-	 #QWidget.__init__(self,parent)
+class TodoyPage(QWidget):
+   def __init__(self,parent):
+	 QWidget.__init__(self,parent)
 	 self.mousepressed=False
-	 self.inputmode= "sketch"#or auto
+	 self.inputmode= "sketch"#"auto"#"sketch"#or auto
 	 self.pixmap=QPixmap()
 	 self.undoPixmap=QPixmap()
 	 self.image = QImage()
@@ -300,46 +269,10 @@ class Main(QMainWindow):
    def checkKeys(self, event):
 	pass
    
-   def keyPressEvent (self, QKeyEvent):
-	#if QKeyEvent.matches (self, QKeySequence.StandardKey)
-	if QKeyEvent.key()==Qt.Key_Q:
-		print "ye" #implement close!
-	elif QKeyEvent.key()==Qt.Key_B:
-		self.pen = QPen(Qt.blue, 4, Qt.SolidLine)
-		#self.update()
-	elif QKeyEvent.key()==Qt.Key_R:
-		self.pen = QPen(Qt.red, 4, Qt.SolidLine)
-		#self.update()
-	elif QKeyEvent.key()==Qt.Key_G:
-		self.pen = QPen(Qt.green, 4, Qt.SolidLine)
-		#self.update()
-	elif QKeyEvent.key()==Qt.Key_K:
-		self.pen = QPen(Qt.black, 4, Qt.SolidLine)
-	elif QKeyEvent.key()==Qt.Key_C:
-		self.openPixmap("todoy_bkgrnd.png")
-	elif QKeyEvent.key()==Qt.Key_W:
-		self.pen = QPen(Qt.white, 10, Qt.SolidLine)
-	elif QKeyEvent.key()==Qt.Key_Z:
-		self.undo()
-	elif QKeyEvent.key()==Qt.Key_S:
-		self.save()
-	elif QKeyEvent.key()==Qt.Key_L:
-		self.load()
+   
 
 		#implement_delete_all
-		pass
+		
 	
 	self.update()
 
-
-
-
-def main():
-     app = QApplication(sys.argv)
-     window=Main()
-     window.show()
-     sys.exit(app.exec_())
-
-
-if __name__ == "__main__":
-     main()

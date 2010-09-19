@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'another.ui'
 #
-# Created: Sun Sep 19 16:54:35 2010
+# Created: Sun Sep 19 17:06:38 2010
 #      by: PyQt4 UI code generator 4.7.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -55,4 +55,14 @@ class Ui_MainWindow(object):
         self.radioButton.setText(QtGui.QApplication.translate("MainWindow", "sketchmode", None, QtGui.QApplication.UnicodeUTF8))
         self.menuSettings.setTitle(QtGui.QApplication.translate("MainWindow", "settings", None, QtGui.QApplication.UnicodeUTF8))
         self.menuAbout.setTitle(QtGui.QApplication.translate("MainWindow", "about", None, QtGui.QApplication.UnicodeUTF8))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtGui.QApplication(sys.argv)
+    MainWindow = QtGui.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
 

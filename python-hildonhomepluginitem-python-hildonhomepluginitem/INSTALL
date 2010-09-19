@@ -1,0 +1,8 @@
+Installation
+============
+
+apt-get install python-hildondesktop python-setuptools
+
+python setup.py install
+
+Enjoy!

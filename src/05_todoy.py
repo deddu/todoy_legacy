@@ -3,7 +3,8 @@ from PyQt4 import *
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 from time import *
-
+#duplicate bkgrnd
+#and zoom out picture in widget
 #class TodoyArea(QWidget):
 """ todoy.py 
     for the moment just a simple paint program with a bkground"""

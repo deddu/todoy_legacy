@@ -4,7 +4,7 @@ from math import pi
 import cairo
 import gtk
 import hildondesktop
-
+import time
 class hw_home_applet_c(hildondesktop.HomePluginItem):
     '''
     __gsignals__ = {
@@ -14,9 +14,11 @@ class hw_home_applet_c(hildondesktop.HomePluginItem):
     '''
     def __init__(s):
         hildondesktop.HomePluginItem.__init__(s)
-        pb = gtk.gdk.pixbuf_new_from_file('/home/user/src/demos/images/gnome-gimp.png')
+        today=time.strftime("%Y%m%d",time.gmtime())+".png"
+        fname='/home/user/MyDocs/DropN900/todoy/src/'+today
+        pb = gtk.gdk.pixbuf_new_from_file(fname)
         i = gtk.Image()
-        s.set_size_request(90,90)
+        s.set_size_request(300,300)
         i.set_from_pixbuf(pb)
         i.show_all()
         s.add(i)

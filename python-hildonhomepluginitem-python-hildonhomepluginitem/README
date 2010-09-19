@@ -1,0 +1,12 @@
+A subclass of hildondesktop.HomePluginItem to ease the creation of
+Hildon-compliant desktop widgets in Python. It consolidates code to round
+corners and render semi-transparently with a clean gradient look and highlight
+when clicked.
+
+Much of the code came from the conversations-inbox-widget (written in C) and
+several other python widgets (which all appeared to be copy-pasting the same
+boilerplate). It is provided in the hopes that people will stop copying and
+pasting bad, half-working code and start reusing standard code.
+
+Please consider improving it or filing a bug if it doesn't meet your needs yet
+(which is currently very likely).

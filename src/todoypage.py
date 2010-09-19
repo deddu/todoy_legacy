@@ -22,7 +22,7 @@ class TodoyPage(QWidget):
 	 self.pen=QPen(Qt.black, 4, Qt.SolidLine)
 	 self.p1 = QPoint(-1, -1)
 	 self.p2 = QPoint(-1, -1)
-         
+         self.date=strftime("%Y%m%d",gmtime())
 
    def openPixmap(self, fileName):
 	loadedPix=QPixmap()
@@ -36,11 +36,11 @@ class TodoyPage(QWidget):
         return True
 
    def save(self):
-	today=strftime("%Y%m%d",gmtime())+".png"
+	today=self.date+".png"
 	self.pixmap.save(today)
 
    def load(self):
-	today=strftime("%Y%m%d",gmtime())+".png"
+	today=self.date+".png"#strftime("%Y%m%d",gmtime())+".png"
 	self.openPixmap(today)	
 	self.openImage(today)
 
@@ -60,11 +60,11 @@ class TodoyPage(QWidget):
 
    def paintEvent(self, ev):
         p = QPainter(self)
-	today=strftime("%a, %d %b %Y",gmtime())
+	#today=strftime("%a, %d %b %Y",gmtime())
         p.setFont(QFont("Arial", 15))
-        p.drawText(15,40, today)
+        p.drawText(20,50, self.date)
 	infos=("Q: Quit, C: Clear, B: Blue, R: Red, G: Green, K: Black, Z: Undo.")
-	p.drawText(15,80, infos)
+	p.drawText(20,90, infos)
 	pen=self.pen#QPen()
 	draftPen=QPen()
 	#color = QColor(Qt.black)
@@ -80,9 +80,9 @@ class TodoyPage(QWidget):
 	#p.drawImage(QPoint(0,0),self.image)
 	p.drawPixmap(QPoint(0, 0), self.pixmap);
 	if self.mousepressed:#(toolbar->downButton() != ToolBarButton::EPen)
-   		p.setPen(draftPen); #// ongoing drawing, not final (waiting for mouseRelease)
+   		p.setPen(draftPen) #// ongoing drawing, not final (waiting for mouseRelease)
         	if self.inputmode=="sketch":#(toolbar->downButton() == ToolBarButton::ELine)
-        		self.paintLine(p);
+        		self.paintLine(p)
 		elif self.inputmode=="auto":
 	 	     self.paintAuto(p)
 
@@ -217,34 +217,6 @@ class TodoyPage(QWidget):
 		#el.startAngle()
 		#self.paintText(painter)
 		
-
-#  def paintText(self, painter):
-#	text=QTextEdit()
-	#text.setFormat(Qt.PlainText)
-#	pm=QPoint((self.p1.x()+self.p2.x())/2,(self.p1.y()+self.p2.y())/2)
-#	text.anchorAt(pm)
-#	from todoyclasses import TodoyTextItem
-#	textItem = TodoyTextItem()
-#	#textItem.setFont(myFont);
-#        textItem.setTextInteractionFlags(Qt.TextEditorInteraction)
-#        textItem.setZValue(1000.0)
-#        connect(textItem, SIGNAL(lostFocus(TodoyTextItem)), SLOT(editorLostFocus(TodoyTextItem)))
-#        connect(textItem, SIGNAL(selectedChange(QGraphicsItem)), SIGNAL(itemSelected(QGraphicsItem)))
-#        self.addItem(text)
-#        #textItem.setDefaultTextColor(myTextColor)
-#	pm=QPoint((self.p1.x()+self.p2.x())/2,(self.p1.y()+self.p2.y())/2)
-#        textItem.setPos(pm)
-#        emit(textInserted(textItem))
-
-
-
-
-
-
-
-
-
-
    def drawLineTo(self,endpoint):
 	painter=QPainter()
 	painter.begin(self.image)
@@ -280,6 +252,8 @@ class TodoyPage(QWidget):
 
 		#implement_delete_all
 		
-	
+   def setdate(self, date):
+	self.date=date.toString("yyyyMMdd")
+	print self.date
 	#self.update()
 

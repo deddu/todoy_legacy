@@ -1,5 +1,5 @@
 todo:
-- add auto creation of slabs: arc + textfield
+- add auto creation of slabs: arc + textfield (permanent mode??)
 - widget optimization: size/centering
 - image existence check
 - auto load if exist, else new. Idem 4 widget.

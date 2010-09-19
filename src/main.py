@@ -14,10 +14,17 @@ class Main(QMainWindow):
          self.ui=Ui_MainWindow()#QWidget() 
          self.ui.setupUi(self)
 	 self.todoypage=TodoyPage(self)
+         #today=QDate()
+	 
+	 eee=strftime("%Y%m%d",gmtime())
+	 today=QDate.fromString(eee,"yyyyMMdd")
+	 #print today, eee
+	 self.ui.dateEdit.setDate(today)
+	 self.ui.dateEdit.setDisplayFormat("yyyy.MM.dd")
 	 #self.ui.radioButton.Checked=True
 	 QObject.connect(self.ui.radioButton, SIGNAL("pressed()"), self.todoypage.setmode)
 	 QObject.connect(self.ui.lineEdit, SIGNAL("textChanged(QString)"), self.todoypage.settext)
-	 #QObject.connect(self.ui.dateEdit, SIGNAL(""),self.todoypage.setdate)
+	 QObject.connect(self.ui.dateEdit, SIGNAL("dateChanged(QDate)"),self.todoypage.setdate)
 
 
 

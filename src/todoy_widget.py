@@ -10,10 +10,10 @@ class MyWidget(HildonHomePluginItem):
         self.show_all()
 	pb = gtk.gdk.pixbuf_new_from_file('./todoy_bkgrnd.png')
         i = gtk.Image()
-        s.set_size_request(200,200)
+        #s.set_size_request(200,200)
         i.set_from_pixbuf(pb)
         i.show_all()
-        s.add(i)
+        self.add(i)
 
 hd_plugin_type = MyWidget
 

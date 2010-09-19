@@ -14,6 +14,12 @@ class Main(QMainWindow):
          self.ui=Ui_MainWindow()#QWidget() 
          self.ui.setupUi(self)
 	 self.todoypage=TodoyPage(self)
+	 #self.ui.radioButton.Checked=True
+	 QObject.connect(self.ui.radioButton, SIGNAL("pressed()"), self.todoypage.setmode)
+	 #QObject.connect(self.ui.radioButton, SIGNAL("toggled(checked)"), self.todoypage.butt)
+
+
+
 	 try:
             self.setAttribute(Qt.WA_Maemo5StackedWindow)
             USE_MAEMO = True
@@ -24,6 +30,7 @@ class Main(QMainWindow):
 	#if QKeyEvent.matches (self, QKeySequence.StandardKey)
 	if QKeyEvent.key()==Qt.Key_Q:
 		print "ye" #implement close!
+		QApplication.exit(0)
 	elif QKeyEvent.key()==Qt.Key_B:
 		self.todoypage.pen = QPen(Qt.blue, 4, Qt.SolidLine)
 		#self.update()
@@ -46,6 +53,12 @@ class Main(QMainWindow):
 	elif QKeyEvent.key()==Qt.Key_L:
 		self.todoypage.load()
 
+
+   #def isChecked(ev):
+	#checkbox.stateChanged
+	#if ui.radiobutton.isChecked():
+	#	print "eya"
+	#	pass
 
 
 

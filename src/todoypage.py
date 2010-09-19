@@ -9,7 +9,7 @@ class TodoyPage(QWidget):
    def __init__(self,parent):
 	 QWidget.__init__(self,parent)
 	 self.mousepressed=False
-	 self.inputmode= "sketch"#"auto"#"sketch"#or auto
+	 self.inputmode= "auto"#"sketch"#or auto
 	 self.pixmap=QPixmap()
 	 self.undoPixmap=QPixmap()
 	 self.image = QImage()
@@ -266,13 +266,20 @@ class TodoyPage(QWidget):
 
         QWidget.resizeEvent(self, event)
 
-   def checkKeys(self, event):
-	pass
+   def setmode(self):#, event):
+	#print "uff"
+	if self.inputmode=="sketch": self.inputmode="auto"
+	else: self.inputmode="sketch"
+	#	print "cacca"
+	#else:
+	#	self.inputmode="auto"
    
-   
+   #def butt(self, checked):
+	#if checked==True:
+	#	print "ah"
 
 		#implement_delete_all
 		
 	
-	self.update()
+	#self.update()
 

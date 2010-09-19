@@ -27,6 +27,7 @@ class Main(QMainWindow):
    def __init__(self):
          QMainWindow.__init__(self)
 	 self.mousepressed=False
+	 self.inputmode= "auto"#"sketch"#or auto
 	 self.pixmap=QPixmap()
 	 self.undoPixmap=QPixmap()
 	 self.image = QImage()
@@ -105,8 +106,10 @@ class Main(QMainWindow):
 	p.drawPixmap(QPoint(0, 0), self.pixmap);
 	if self.mousepressed:#(toolbar->downButton() != ToolBarButton::EPen)
    		p.setPen(draftPen); #// ongoing drawing, not final (waiting for mouseRelease)
-        	if True:#(toolbar->downButton() == ToolBarButton::ELine)
+        	if self.inputmode=="sketch":#(toolbar->downButton() == ToolBarButton::ELine)
         		self.paintLine(p);
+		elif self.inputmode=="auto":
+	 	     self.paintCircle(p)
 
 
 	p.end()
@@ -124,7 +127,7 @@ class Main(QMainWindow):
 
 
    def mouseMoveEvent(self, event):
-	if (event.buttons() & Qt.LeftButton) and self.mousepressed:
+	if (event.buttons() & Qt.LeftButton) and self.mousepressed and self.inputmode=="sketch":
         #   self.drawLineTo(event.pos())
 	# if (toolbar.downButton() == ToolBarButton.EPen or toolbar.downButton()== ToolBarButton.EErase) 
 	        #// Pen is drawed direct to pixmap in mouseMoveEvent
@@ -143,7 +146,7 @@ class Main(QMainWindow):
 	        #// Draw ongoing drawing
 	        	self.p2 = event.pos()
 	        #// Update screen
-	self.update()
+			self.update()
 	    
 
 
@@ -190,14 +193,14 @@ class Main(QMainWindow):
 
 	painter.setPen(self.pen)
 
-	#if (toolbar->downButton() == ToolBarButton::EPen || toolbar->downButton()== ToolBarButton::ELine)
-	self.paintLine(painter)
+	if self.inputmode=="sketch":#(toolbar->downButton() == ToolBarButton::EPen || toolbar->downButton()== ToolBarButton::ELine)
+		self.paintLine(painter)
 #	else if (toolbar->downButton() == ToolBarButton::EErase)
 #	    paintPoint(painter)
 #	else if (toolbar->downButton() == ToolBarButton::ERectangle)
 #	    paintRect(painter)
-#	else if (toolbar->downButton() == ToolBarButton::ECircle)
-#	    paintCircle(painter)
+	elif self.inputmode=="auto":
+	    self.paintCircle(painter)
 
 	painter.end()
 	#// Draw pixmap on the screen
@@ -208,7 +211,13 @@ class Main(QMainWindow):
 	if (self.p1.x() != -1 and self.p2.x() != -1):
 	   #painter.pen=self.pen
            painter.drawLine(self.p1, self.p2);
-    
+
+   def paintCircle(self, painter):
+    	if (self.p2.x() != -1): 
+        	w = (self.p2.x() - self.p1.x()) * 1
+        	h = (self.p2.y() - self.p1.y()) * 1
+        	c = QPoint(self.p1.x() + w / 2, self.p1.y() + h / 2)
+        	painter.drawEllipse(c, w, h)
 
 
 #void Widget::paintPoint(QPainter& painter)

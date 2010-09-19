@@ -37,12 +37,29 @@ class Main(QMainWindow):
 	 self.openImage("todoy_bkgrnd.png")
 	 self.openPixmap("todoy_bkgrnd.png")
 	 self.pen=QPen(Qt.black, 4, Qt.SolidLine)
-	 self.p1 = QPoint(-1, -1);
-	 self.p2 = QPoint(-1, -1);
+	 self.p1 = QPoint(-1, -1)
+	 self.p2 = QPoint(-1, -1)
+#	 self.text=QTextEdit(self)
+	 #self.text.pos=QPoint(300,300)
+	 #self.text.show()
 	 #self.menu=QMenuBar()
 	 #cacca=QAction(self)#QString("cacca"))
 	 #self.menu.addAction(cacca)
 	 #self.menu.show()
+#         self.menubar = QMenuBar(self)
+#         self.menubar.setGeometry(QRect(0, 0, 800, 23))
+#         self.menubar.setObjectName("menubar")
+#	 self.setMenuBar(self.menubar)
+#         self.statusbar = QStatusBar(self)
+#         self.statusbar.setObjectName("statusbar")
+#         self.setStatusBar(self.statusbar)
+#	 self.menubar.show()
+#	 self.statusbar.show()
+
+
+
+
+
          try:
             self.setAttribute(Qt.WA_Maemo5StackedWindow)
             USE_MAEMO = True
@@ -231,7 +248,6 @@ class Main(QMainWindow):
 		painter.drawLine(orig,self.p2)
 		painter.drawLine(self.p1,self.p2)
 		painter.drawText(pm, "yay!")
-
 		#startangle=-degrees(atan(y2/x2))*16
 		#endangle=-degrees(atan(y1/x1))*16
 		#spanangle= -(abs(startangle) + abs(endangle)) #360*16
@@ -241,18 +257,27 @@ class Main(QMainWindow):
         	#painter.drawPie(orig.x(),orig.y(), w, h,startangle,spanangle)
 		#el=QGraphicsEllipseItem()
 		#el.startAngle()
+		#self.paintText(painter)
 		
 
+#  def paintText(self, painter):
+#	text=QTextEdit()
+	#text.setFormat(Qt.PlainText)
+#	pm=QPoint((self.p1.x()+self.p2.x())/2,(self.p1.y()+self.p2.y())/2)
+#	text.anchorAt(pm)
+#	from todoyclasses import TodoyTextItem
+#	textItem = TodoyTextItem()
+#	#textItem.setFont(myFont);
+#        textItem.setTextInteractionFlags(Qt.TextEditorInteraction)
+#        textItem.setZValue(1000.0)
+#        connect(textItem, SIGNAL(lostFocus(TodoyTextItem)), SLOT(editorLostFocus(TodoyTextItem)))
+#        connect(textItem, SIGNAL(selectedChange(QGraphicsItem)), SIGNAL(itemSelected(QGraphicsItem)))
+#        self.addItem(text)
+#        #textItem.setDefaultTextColor(myTextColor)
+#	pm=QPoint((self.p1.x()+self.p2.x())/2,(self.p1.y()+self.p2.y())/2)
+#        textItem.setPos(pm)
+#        emit(textInserted(textItem))
 
-#void Widget::paintPoint(QPainter& painter)
-#{
-#    if (p1.x() != -1) {
-#        QPoint p = p1;
-#        p.setX(p.x() - 5);
-#        p.setY(p.y() - 5);
-#        painter.fillRect(QRect(p, QSize(10, 10)), Qt::white);
-#    }
-#}
 
 
 

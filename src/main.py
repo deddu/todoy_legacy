@@ -16,7 +16,8 @@ class Main(QMainWindow):
 	 self.todoypage=TodoyPage(self)
 	 #self.ui.radioButton.Checked=True
 	 QObject.connect(self.ui.radioButton, SIGNAL("pressed()"), self.todoypage.setmode)
-	 #QObject.connect(self.ui.radioButton, SIGNAL("toggled(checked)"), self.todoypage.butt)
+	 QObject.connect(self.ui.lineEdit, SIGNAL("textChanged(QString)"), self.todoypage.settext)
+	 #QObject.connect(self.ui.dateEdit, SIGNAL(""),self.todoypage.setdate)
 
 
 

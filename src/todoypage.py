@@ -13,6 +13,7 @@ class TodoyPage(QWidget):
 	 self.pixmap=QPixmap()
 	 self.undoPixmap=QPixmap()
 	 self.image = QImage()
+	 self.text=""
          #self.lastPoint = QPoint()
 	 self.setWindowTitle("Todoy")
          self.resize(640,480)
@@ -203,8 +204,8 @@ class TodoyPage(QWidget):
 		pm=QPoint((self.p1.x()+self.p2.x())/2,(self.p1.y()+self.p2.y())/2)
 		painter.drawLine(orig, self.p1)
 		painter.drawLine(orig,self.p2)
-		painter.drawLine(self.p1,self.p2)
-		painter.drawText(pm, "yay!")
+		#painter.drawLine(self.p1,self.p2)
+		painter.drawText(pm, self.text)
 		#startangle=-degrees(atan(y2/x2))*16
 		#endangle=-degrees(atan(y1/x1))*16
 		#spanangle= -(abs(startangle) + abs(endangle)) #360*16
@@ -274,9 +275,8 @@ class TodoyPage(QWidget):
 	#else:
 	#	self.inputmode="auto"
    
-   #def butt(self, checked):
-	#if checked==True:
-	#	print "ah"
+   def settext(self, text):
+	self.text=text
 
 		#implement_delete_all
 		

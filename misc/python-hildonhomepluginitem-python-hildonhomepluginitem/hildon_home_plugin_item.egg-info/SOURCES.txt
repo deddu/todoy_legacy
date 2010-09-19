@@ -1,0 +1,7 @@
+README
+setup.py
+hildon_home_plugin_item/__init__.py
+hildon_home_plugin_item.egg-info/PKG-INFO
+hildon_home_plugin_item.egg-info/SOURCES.txt
+hildon_home_plugin_item.egg-info/dependency_links.txt
+hildon_home_plugin_item.egg-info/top_level.txt

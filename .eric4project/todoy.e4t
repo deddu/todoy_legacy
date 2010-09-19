@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Tasks SYSTEM "Tasks-4.2.dtd">
+<!-- eric4 tasks file for project todoy -->
+<!-- Saved: 2010-08-06, 16:12:39 -->
+<Tasks version="4.2">
+  <Task priority="1" completed="False" bugfix="False">
+    <Summary>TODO: not implemented yet</Summary>
+    <Description></Description>
+    <Created>2010-08-06, 16:09:58</Created>
+    <Resource>
+      <Filename>mainwindow.py</Filename>
+      <Linenumber>31</Linenumber>
+    </Resource>
+  </Task>
+</Tasks>

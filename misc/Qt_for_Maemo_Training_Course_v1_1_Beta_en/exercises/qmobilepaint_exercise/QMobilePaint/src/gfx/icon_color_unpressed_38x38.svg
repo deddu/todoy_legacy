@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 13.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 14948)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1"
+	 id="svg2" inkscape:output_extension="org.inkscape.output.svg.inkscape" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" inkscape:version="0.46" xmlns:svg="http://www.w3.org/2000/svg" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cc="http://creativecommons.org/ns#" sodipodi:docname="icon_color_unpressed_38x38.svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" sodipodi:version="0.32" xmlns:dc="http://purl.org/dc/elements/1.1/"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="36px" height="36px"
+	 viewBox="0 0 36 36" enable-background="new 0 0 36 36" xml:space="preserve">
+<linearGradient id="path29_1_" gradientUnits="userSpaceOnUse" x1="-857.0088" y1="-1492.8516" x2="-823.4287" y2="-1492.8516" gradientTransform="matrix(-1 0 0 -1 -822.2188 -1474.8467)">
+	<stop  offset="0" style="stop-color:#FFFFFF"/>
+	<stop  offset="0.1383" style="stop-color:#FAFAFA"/>
+	<stop  offset="0.3118" style="stop-color:#EAEAEA"/>
+	<stop  offset="0.5042" style="stop-color:#D1D1D1"/>
+	<stop  offset="0.7101" style="stop-color:#ADADAD"/>
+	<stop  offset="0.9247" style="stop-color:#7F7F7F"/>
+	<stop  offset="1" style="stop-color:#6E6E6E"/>
+</linearGradient>
+<path id="path29" fill="url(#path29_1_)" d="M29.05,0.84c3.15,0,5.74,2.58,5.74,5.74v22.85c0,3.15-2.58,5.74-5.74,5.74H6.95
+	c-3.15,0-5.74-2.58-5.74-5.74V6.58c0-3.15,2.58-5.74,5.74-5.74H29.05z"/>
+<rect id="rect31" fill="none" width="36" height="36"/>
+<linearGradient id="path54_1_" gradientUnits="userSpaceOnUse" x1="191.4199" y1="865.0049" x2="158.5801" y2="865.0049" gradientTransform="matrix(1 0 0 1 -157 -847)">
+	<stop  offset="0" style="stop-color:#BBBBBB"/>
+	<stop  offset="2.400000e-03" style="stop-color:#B9B9B9"/>
+	<stop  offset="0.0546" style="stop-color:#969595"/>
+	<stop  offset="0.1117" style="stop-color:#777676"/>
+	<stop  offset="0.1764" style="stop-color:#5D5A5B"/>
+	<stop  offset="0.2496" style="stop-color:#474445"/>
+	<stop  offset="0.335" style="stop-color:#373334"/>
+	<stop  offset="0.4406" style="stop-color:#2B2829"/>
+	<stop  offset="0.5887" style="stop-color:#252122"/>
+	<stop  offset="1" style="stop-color:#231F20"/>
+</linearGradient>
+<path id="path54" fill="url(#path54_1_)" d="M7.19,34.79c-3.09,0-5.61-2.53-5.61-5.61V6.83c0-3.09,2.52-5.61,5.61-5.61h21.62
+	c3.09,0,5.61,2.53,5.61,5.61v22.35c0,3.09-2.53,5.61-5.61,5.61H7.19z"/>
+<path id="path56" d="M7.19,35.79v-1v-1h21.62c2.53,0,4.61-2.08,4.61-4.61l0,0V6.83c0-2.53-2.08-4.61-4.61-4.61l0,0H7.19
+	c-2.53,0-4.61,2.08-4.61,4.61l0,0v22.35c0,2.53,2.08,4.61,4.61,4.61l0,0v1V35.79c-3.65,0-6.61-2.97-6.61-6.61l0,0V6.83
+	c0-3.64,2.97-6.61,6.61-6.61l0,0h21.62c3.64,0,6.61,2.97,6.61,6.61l0,0v22.35c0,3.64-2.97,6.61-6.61,6.61l0,0H7.19L7.19,35.79z"/>
+<linearGradient id="path65_1_" gradientUnits="userSpaceOnUse" x1="117.46" y1="821.4395" x2="148.4199" y2="821.4395" gradientTransform="matrix(1 0 0 1 -115 -807)">
+	<stop  offset="0" style="stop-color:#000000"/>
+	<stop  offset="0.6538" style="stop-color:#1C1C1C"/>
+	<stop  offset="1" style="stop-color:#757575"/>
+</linearGradient>
+<path id="path65" fill="url(#path65_1_)" d="M28.13,1.93H7.75c-2.91,0-5.29,2.38-5.29,5.29v19.73c2.66-3.11,12.05-12.38,30.96-14.39
+	V7.21C33.42,4.31,31.04,1.93,28.13,1.93z"/>
+<polygon id="polygon233" points="6.22,21.12 6.22,13.81 13.52,13.81 13.52,19.92 13.52,21.12 "/>
+<rect id="rect235" x="7.2" y="14.79" fill="#FFFFFF" width="5.34" height="5.34"/>
+<polygon id="polygon237" fill="#00A551" points="7.98,19.35 11.76,19.35 11.76,15.57 7.98,15.57 "/>
+<polygon id="polygon239" points="6.22,12.89 6.22,5.58 13.52,5.58 13.52,11.69 13.52,12.89 "/>
+<rect id="rect241" x="7.2" y="6.56" fill="#FFFFFF" width="5.34" height="5.34"/>
+<polygon id="polygon243" fill="#EC1C24" points="7.98,11.12 11.76,11.12 11.76,7.34 7.98,7.34 "/>
+<polygon id="polygon245" points="6.22,29.52 6.22,22.21 13.52,22.21 13.52,28.32 13.52,29.52 "/>
+<rect id="rect247" x="7.2" y="23.19" fill="#FFFFFF" width="5.34" height="5.34"/>
+<polygon id="polygon249" fill="#00ADEE" points="7.98,27.75 11.76,27.75 11.76,23.97 7.98,23.97 "/>
+<polygon id="polygon251" points="14.4,29.52 14.4,22.21 21.71,22.21 21.71,28.32 21.71,29.52 "/>
+<rect id="rect253" x="15.39" y="23.19" fill="#FFFFFF" width="5.34" height="5.34"/>
+<polygon id="polygon255" fill="#FFF100" points="16.17,27.75 19.95,27.75 19.95,23.97 16.17,23.97 "/>
+<polygon id="polygon257" points="14.92,21.04 14.92,6.04 29.51,6.04 29.51,18.58 29.51,21.04 "/>
+<path id="path259" fill="#231F20" d="M14.92,21.54v-0.5h0.5h-0.5V21.54h-0.5v-16h15.59v13.05v2.95H14.92L14.92,21.54z M29.01,20.54
+	v-1.96V6.53H15.42v14L29.01,20.54L29.01,20.54z"/>
+<polygon id="polygon261" points="22.61,29.69 22.61,22.38 29.91,22.38 29.91,28.49 29.91,29.69 "/>
+<rect id="rect263" x="23.59" y="23.36" fill="#FFFFFF" width="5.34" height="5.34"/>
+<polygon id="polygon265" fill="#B3B3B3" points="24.37,27.92 28.15,27.92 28.15,24.14 24.37,24.14 "/>
+</svg>

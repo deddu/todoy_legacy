@@ -1,0 +1,11 @@
+Source: collidingmice-gravity
+Section: user/extra
+Priority: optional
+Maintainer: Mr Maemo <integration@maemo.org>
+Build-Depends: debhelper (>= 5), libqt4-dev, libdevornot-qt-maemo-dev
+Standards-Version: 3.7.2
+
+Package: collidingmice-gravity
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: Colliding Mice Gravity Example

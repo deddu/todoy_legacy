@@ -1,0 +1,38 @@
+collidingmice-gravity (0.2-2) unstable; urgency=low
+
+  * binded increase/decrease keys to fullscreen and normal
+
+ -- Maemo Team <integration@maemo.org>  Fri,  2 Oct 2009 08:42:53 +0300
+
+collidingmice-gravity (0.2-1) unstable; urgency=low
+
+  * timer moved to `main', see
+    http://qt.nokia.com/doc/4.5/graphicsview-collidingmice.html
+
+ -- Mr Maemo <integration@maemo.org>  Thu,  3 Sep 2009 11:23:13 +0300
+
+collidingmice-gravity (0.2-0) unstable; urgency=low
+
+  * updated control, copyrights and licenses. Thanks to Jarmo Tikka.
+
+ -- Mr Maemo <integration@maemo.org>  Thu,  3 Sep 2009 11:23:13 +0300
+
+collidingmice-gravity (0.1-3) unstable; urgency=low
+
+  * DeviceOrientationNotifier moved to separate library
+
+ -- Mr Maemo <integration@maemo.org>  Fri, 28 Aug 2009 16:27:13 +0300
+
+collidingmice-gravity (0.1-2) unstable; urgency=low
+
+  * pitch and roll getting moved to DeviceOrientationNotifier
+  * scene properties setting moved to SceneTuner
+
+ -- Mr Maemo <integration@maemo.org>  Thu, 27 Aug 2009 17:00:52 +0300
+
+collidingmice-gravity (0.1-1) unstable; urgency=low
+
+  * Initial release with gravity effect
+
+ -- Mr Maemo <integration@maemo.org>  Fri, 21 Aug 2009 15:24:25 +0300
+

@@ -1,0 +1,18 @@
+Source: libdevornot-qt-maemo
+Priority: optional
+Maintainer: Mr Maemo <integration@maemo.org>
+Build-Depends: debhelper (>= 5), libqt4-dev (>= 4.5.0), mce-dev (>= 1.8.10)
+Standards-Version: 3.7.2
+Section: libs
+
+Package: libdevornot-qt-maemo
+Architecture: any
+Depends: ${shlibs:Depends}, mce (>= 1.8.10)
+Description: Device Orintation Notifier library
+ Device Orintation pitch and roll Notifier library.
+
+Package: libdevornot-qt-maemo-dev
+Architecture: any
+Depends: libdevornot-qt-maemo (= ${binary:Version})
+Description: Device Orintation Notifier library
+ Device Orintation pitch and roll Notifier library, development files.

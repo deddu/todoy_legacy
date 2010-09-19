@@ -1,0 +1,48 @@
+# EXERCISE CONTROLFILE:
+# Source of this package is the qmobilepaint binary
+Source: qmobilepaint
+# EXERCISE CONTROLFILE:
+# Section for the package could be for example "user/graphics". 
+# Note that Application Manager shows only packages from "user" subsections.
+Section: user/graphics
+Priority: extra
+Maintainer: unknown <name@company.com>
+# EXERCISE CONTROLFILE:
+# Build-Depends should contain libqt4-dev
+Build-Depends: debhelper (>= 5), libqt4-dev
+Standards-Version: 3.7.2
+
+Package: qmobilepaint
+# EXERCISE CONTROLFILE:
+# Architecture can be set to "any" so that it is determined
+# automatically during package creation (X86 or ARMEL).
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, hildon-application-manager
+Description: QMobilePaint
+ Painting example.
+XB-Maemo-Icon-26:
+ iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAABHNCSVQICAgI
+ fAhkiAAAAAlwSFlzAAAILgAACC4B4ThkEQAAABl0RVh0U29mdHdhcmUAd3d3
+ Lmlua3NjYXBlLm9yZ5vuPBoAAAPMSURBVEiJ3ZZfSFt3FMc/9xqDWU1u0nYx
+ /snMZJlKyoyrnYM9ZNjZVrYOFDXxQSjK3sSHtS+DvUgZ20tlbyt7mToQBisY
+ sRvzabgXB+JQqcM1zFaNkRhMSK7Xe/Pn3r04GVuNnWwd7MB5+p3f9/M75/x+
+ h59gGAbPwsRnQvnPQYIg1P7TINOfAAPV1dUf+P1+pyAIXwJfP4VG0jCMpZOC
+ hN8vgyAInpaWlp8qKyvtDQ0N5PN5Y25uLv/W5cvZYgLfzc5qkUjkw0wm81mx
+ uKOMRFEcc7vddlEUGRoaIplMCna7vXRhYaF0dHSUXC6HLMukUikSiQTRaJTX
+ Ll3i/Zs3z7x7/fpHNputkE6nPz8OdNQjXdczLpeL7u5uSkpKqKurIxQKEQgE
+ GBgYIJPJkM1mkWWZRCLBxsYGm1tbOJ1OpsJhR0N9/cc2m+29E0HAzXv37j2U
+ ZZmlpSXi8TiVlZUEg0GCwSDDw8MkEglEUUSSJJqamrBYLAC4XC7C4fBZr9f7
+ idVqHXwSSPjjgxUE4azZbL4/MjLy+oULF6itrcXj8aCqKlNTU4yPj9Pb20tN
+ TQ2aplFWVkZnZ+fR/kfr67x68eLW3t6euyjoEFYqCMKPQ0NDze3t7VRUVFBf
+ X4+u60xPTzM5OUljYyM+n49sNoteKFA49KvXrtHW1vY4Ho97ipUOAMMwcmaz
+ +YtoNMrExASxWIzl5WUMw6Crq4vBwUFisRgzMzNkMhn2kkniu7tsx2IU8vnj
+ WnT8ZOjp6aG5uZk7d+6ws7PD4uIiiqLQ0dFBf38/drudhYUFZFk+8mJz03Ts
+ CuD3+zEMg5GREW7dukU+n8fn8xEIBLBYLNy4cQOn04mmaaiqil4EVHTWHRwc
+ cO7cOfr6+rh9+zarq6ssLy8TjUZZW1vD6/WysrKCLMvs7+9j6PrpMlJVFVmW
+ AQiFQty9exe/348kSVRVVdHa2srY2BiSJJ2Y0VOBNE1D0zTa29ux/BIh+v0P
+ fCWC3VOLJElEIhEcDsfpe1RIpbBsxzBrWco0FV3VMIki/Y7zuBWVjd0Esy1x
+ vomWkFZMpy+dtP6Yl1Z+xplK49xXMB2eWGkqkHgjR/kLOd553owvKRL+Nnn6
+ 0j10Obnv9ZBXVSwZGXcqjVeRCTxQsD8QOXjRhPimymZ5jkeb2ulLZ7VacTgc
+ 1G7vcHE3SbmWxZLVEcpBKDU4kxPR90y8/YrOmaCF58rUvw+an5/n6pUrvOz1
+ AqAc+nF2vgZ+XU9SKBSeqPmXWQcgCILfZrP1FNE91nK53K6iKJ8+FejfsP/f
+ d+s3Ph+79fs5e/EAAAAASUVORK5CYII=

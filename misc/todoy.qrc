@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="bkgrnd">
+    <file>todoy_bkgrnd.png</file>
+  </qresource>
+</RCC>

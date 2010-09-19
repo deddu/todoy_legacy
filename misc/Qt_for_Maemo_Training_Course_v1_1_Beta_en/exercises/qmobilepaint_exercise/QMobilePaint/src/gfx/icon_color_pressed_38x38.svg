@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 13.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 14948)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="36px" height="36px" viewBox="0 0 36 36" enable-background="new 0 0 36 36" xml:space="preserve">
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="-857.0176" y1="-1492.8486" x2="-823.4277" y2="-1492.8486" gradientTransform="matrix(-1 0 0 -1 -823.4277 -1474.0088)">
+	<stop  offset="0" style="stop-color:#FFFFFF"/>
+	<stop  offset="0.1383" style="stop-color:#FAFAFA"/>
+	<stop  offset="0.3118" style="stop-color:#EAEAEA"/>
+	<stop  offset="0.5042" style="stop-color:#D1D1D1"/>
+	<stop  offset="0.7101" style="stop-color:#ADADAD"/>
+	<stop  offset="0.9247" style="stop-color:#7F7F7F"/>
+	<stop  offset="1" style="stop-color:#6E6E6E"/>
+</linearGradient>
+<path fill="url(#SVGID_1_)" d="M27.85,1.68c3.15,0,5.74,2.58,5.74,5.74v22.85c0,3.15-2.58,5.74-5.74,5.74H5.74
+	C2.58,36,0,33.42,0,30.26V7.41c0-3.15,2.58-5.74,5.74-5.74h22.11V1.68z"/>
+<polygon points="5.01,21.96 5.01,14.65 12.32,14.65 12.32,20.76 12.32,21.96 "/>
+<rect x="5.99" y="15.63" fill="#FFFFFF" width="5.34" height="5.34"/>
+<polygon fill="#00A551" points="6.77,20.19 10.55,20.19 10.55,16.41 6.77,16.41 "/>
+<polygon points="5.01,13.73 5.01,6.42 12.32,6.42 12.32,12.53 12.32,13.73 "/>
+<rect x="5.99" y="7.4" fill="#FFFFFF" width="5.34" height="5.34"/>
+<polygon fill="#EC1C24" points="6.77,11.96 10.55,11.96 10.55,8.18 6.77,8.18 "/>
+<polygon points="5.01,30.35 5.01,23.04 12.32,23.04 12.32,29.16 12.32,30.35 "/>
+<rect x="5.99" y="24.03" fill="#FFFFFF" width="5.34" height="5.34"/>
+<polygon fill="#00ADEE" points="6.77,28.59 10.55,28.59 10.55,24.81 6.77,24.81 "/>
+<polygon points="13.19,30.35 13.19,23.04 20.5,23.04 20.5,29.16 20.5,30.35 "/>
+<rect x="14.18" y="24.03" fill="#FFFFFF" width="5.34" height="5.34"/>
+<polygon fill="#FFF100" points="14.96,28.59 18.74,28.59 18.74,24.81 14.96,24.81 "/>
+<polygon fill="#231F20" points="13.71,22.37 13.71,21.87 14.21,21.87 13.71,21.87 13.71,22.37 13.21,22.37 13.21,6.37 28.8,6.37 
+	28.8,19.42 28.8,22.37 13.71,22.37 "/>
+<polygon points="27.8,21.37 27.8,19.41 27.8,7.36 14.21,7.36 14.21,21.36 27.8,21.36 "/>
+<polygon points="21.4,30.52 21.4,23.21 28.71,23.21 28.71,29.33 28.71,30.52 "/>
+<rect x="22.38" y="24.2" fill="#FFFFFF" width="5.34" height="5.34"/>
+<polygon fill="#B3B3B3" points="23.16,28.76 26.94,28.76 26.94,24.98 23.16,24.98 "/>
+</svg>

@@ -1,0 +1,18 @@
+libdevornot-qt-maemo (0.2-1) unstable; urgency=low
+
+  * used `timerEvent' for orientation calls
+
+ -- Mr Maemo <integration@maemo.org>  Tue,  8 Sep 2009 11:38:51 +0300
+
+libdevornot-qt-maemo (0.2-0) unstable; urgency=low
+
+  * updated control, copyrights and licenses. Thanks to Jarmo Tikka.
+
+ -- Mr Maemo <integration@maemo.org>  Thu,  3 Sep 2009 11:16:06 +0300
+
+libdevornot-qt-maemo (0.1-1) unstable; urgency=low
+
+  * Initial release.
+
+ -- Mr Maemo <integration@maemo.org>  Fri, 28 Aug 2009 16:42:39 +0300
+

@@ -1,0 +1,38 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource prefix="/">  
+    <file>gfx/graf_bar_wide_landscape.svg</file>
+    <file>gfx/icon_circle_pressed_38x38.svg</file>
+    <file>gfx/icon_circle_unpressed_38x38.svg</file>
+    <file>gfx/icon_color_pressed_38x38.svg</file>
+    <file>gfx/icon_color_unpressed_38x38.svg</file>
+    <file>gfx/icon_exit_pressed_38x38.svg</file>
+    <file>gfx/icon_exit_unpressed_38x38.svg</file>
+    <file>gfx/icon_line_down_1st_selected_38x38.svg</file>
+    <file>gfx/icon_line_down_2nd_selected_38x38.svg</file>
+    <file>gfx/icon_line_down_3rd_selected_38x38.svg</file>
+    <file>gfx/icon_line_pressed_38x38.svg</file>
+    <file>gfx/icon_line_unpressed_38x38.svg</file>
+    <file>gfx/icon_line_up_1st_selected_38x38.svg</file>
+    <file>gfx/icon_line_up_2nd_selected_38x38.svg</file>
+    <file>gfx/icon_line_up_3rd_selected_38x38.svg</file>
+    <file>gfx/icon_menu_pressed_38x38.svg</file>
+    <file>gfx/icon_menu_unpressed_38x38.svg</file>
+    <file>gfx/icon_new_pressed_38x38.svg</file>
+    <file>gfx/icon_new_unpressed_38x38.svg</file>
+    <file>gfx/icon_pen_pressed_38x38.svg</file>
+    <file>gfx/icon_pen_unpressed_38x38.svg</file>
+    <file>gfx/icon_rectangle_pressed_38x38.svg</file>
+    <file>gfx/icon_rectangle_unpressed_38x38.svg</file>
+    <file>gfx/icon_undo_pressed_38x38.svg</file>
+    <file>gfx/icon_undo_unpressed_38x38.svg</file>
+    <file>gfx/icon_save_pressed_38x38.svg</file>
+    <file>gfx/icon_save_unpressed_38x38.svg</file>
+    <file>gfx/icon_eraser_pressed_38x38.svg</file>
+    <file>gfx/icon_eraser_unpressed_38x38.svg</file>
+    <file>gfx/icon_open_pressed_38x38.svg</file>
+    <file>gfx/icon_open_unpressed_38x38.svg</file>
+    <file>gfx/graf_bar_portrait_fat.svg</file>    
+    <file>gfx/icon_switch_pressed_38x38.svg</file>    
+    <file>gfx/icon_switch_unpressed_38x38.svg</file>    
+</qresource>
+</RCC>

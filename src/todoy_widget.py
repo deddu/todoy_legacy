@@ -1,15 +1,17 @@
 from hildon_home_plugin_item import HildonHomePluginItem
 import gtk
+import time
 
 class MyWidget(HildonHomePluginItem):
     def __init__(self):
         HildonHomePluginItem.__init__(self, header="Todoy_Widget", corner_radius=7)
-        self.set_size_request(200, 180)
+        self.set_size_request(200, 200)
         body = gtk.Label("This is the body\nline2\nline3")
         self.add(body)
         self.show_all()
-	pb = gtk.gdk.pixbuf_new_from_file('./todoy_bkgrnd.png')
-        i = gtk.Image()
+        today=time.strftime("%Y%m%d",time.gmtime())+".png"
+        fname='./'+today
+        pb = gtk.gdk.pixbuf_new_from_file(fname)
         #s.set_size_request(200,200)
         i.set_from_pixbuf(pb)
         i.show_all()

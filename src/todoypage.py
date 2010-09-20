@@ -16,7 +16,7 @@ class TodoyPage(QWidget):
 	 self.text=""
          #self.lastPoint = QPoint()
 	 self.setWindowTitle("Todoy")
-         self.resize(640,480)
+         self.resize(800,350)
 	 self.openImage("todoy_bkgrnd.png")
 	 self.openPixmap("todoy_bkgrnd.png")
 	 self.pen=QPen(Qt.black, 4, Qt.SolidLine)

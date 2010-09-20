@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'another.ui'
 #
-# Created: Sun Sep 19 17:06:38 2010
+# Created: Mon Sep 20 07:14:04 2010
 #      by: PyQt4 UI code generator 4.7.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -12,14 +12,11 @@ from PyQt4 import QtCore, QtGui
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(800, 600)
+        MainWindow.resize(800, 400)
         self.centralwidget = QtGui.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout = QtGui.QGridLayout(self.centralwidget)
         self.gridLayout.setObjectName("gridLayout")
-        self.graphicsView = QtGui.QGraphicsView(self.centralwidget)
-        self.graphicsView.setObjectName("graphicsView")
-        self.gridLayout.addWidget(self.graphicsView, 0, 0, 1, 1)
         self.horizontalLayout = QtGui.QHBoxLayout()
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.lineEdit = QtGui.QLineEdit(self.centralwidget)
@@ -32,6 +29,10 @@ class Ui_MainWindow(object):
         self.dateEdit.setObjectName("dateEdit")
         self.horizontalLayout.addWidget(self.dateEdit)
         self.gridLayout.addLayout(self.horizontalLayout, 1, 0, 1, 1)
+        self.graphicsView = QtGui.QGraphicsView(self.centralwidget)
+        self.graphicsView.setEnabled(False)
+        self.graphicsView.setObjectName("graphicsView")
+        self.gridLayout.addWidget(self.graphicsView, 0, 0, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtGui.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 23))
@@ -41,9 +42,6 @@ class Ui_MainWindow(object):
         self.menuAbout = QtGui.QMenu(self.menubar)
         self.menuAbout.setObjectName("menuAbout")
         MainWindow.setMenuBar(self.menubar)
-        self.statusbar = QtGui.QStatusBar(MainWindow)
-        self.statusbar.setObjectName("statusbar")
-        MainWindow.setStatusBar(self.statusbar)
         self.menubar.addAction(self.menuSettings.menuAction())
         self.menubar.addAction(self.menuAbout.menuAction())
 

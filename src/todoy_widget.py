@@ -4,16 +4,21 @@ import time
 
 class MyWidget(HildonHomePluginItem):
     def __init__(self):
-        HildonHomePluginItem.__init__(self, header="Todoy_Widget", corner_radius=7)
-        self.set_size_request(200, 200)
-        body = gtk.Label("This is the body\nline2\nline3")
-        self.add(body)
+        HildonHomePluginItem.__init__(self, header=time.strftime("%a, %d %b %y",time.gmtime()), corner_radius=7)
+        self.set_size_request(400, 250)
+        #body = gtk.Label("This is the body\nline2\nline3")
+        #self.add(body)
         self.show_all()
         today=time.strftime("%Y%m%d",time.gmtime())+".png"
         fname='./'+today
-        pb = gtk.gdk.pixbuf_new_from_file(fname)
+        pb = gtk.gdk.pixbuf_new_from_file(fname) #was pixbug
+	i = gtk.Image()
+	height=(800*2)/3
+	width=(480 *2)/3
+	scaled_buf = pb.scale_simple(height,width,gtk.gdk.INTERP_BILINEAR)
+	#pb.set_size_request(250,250)
         #s.set_size_request(200,200)
-        i.set_from_pixbuf(pb)
+        i.set_from_pixbuf(scaled_buf)
         i.show_all()
         self.add(i)
 

@@ -42,7 +42,7 @@ def time_conv(time):
 	from math import floor
 	excess=time-floor(time)
 	spareh=0
-	minutes=round(0.6*excess)
+	minutes=round(60*excess)
 	if excess>=0.60: spareh=1
 	hours=floor((time+spareh)%24) 
 	#print hour, minutes

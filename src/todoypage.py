@@ -73,18 +73,13 @@ class TodoyPage(QWidget):
 	draftPen.setColor(Qt.black)
 	draftPen.setStyle(Qt.DashLine)
 	draftPen.setWidth(1)
-
-
-
-
-	#p.drawImage(QPoint(0,0),self.image)
 	p.drawPixmap(QPoint(0, 0), self.pixmap);
-	if self.mousepressed:#(toolbar->downButton() != ToolBarButton::EPen)
+	if self.mousepressed and self.inputmode=="sketch":#(toolbar->downButton() != ToolBarButton::EPen)
    		p.setPen(draftPen) #// ongoing drawing, not final (waiting for mouseRelease)
-        	if self.inputmode=="sketch":#(toolbar->downButton() == ToolBarButton::ELine)
-        		self.paintLine(p)
-		elif self.inputmode=="auto":
-	 	     self.paintAuto(p)
+        	#if self.inputmode=="sketch":
+        	self.paintLine(p)
+	if self.mousepressed and self.inputmode=="auto":
+	 	self.paintAuto(p)
 
 
 	p.end()
@@ -121,6 +116,7 @@ class TodoyPage(QWidget):
 	        #// Draw ongoing drawing
 	        	self.p2 = event.pos()
 	        #// Update screen
+			#self.paintToPixmap()
 			self.update()
 	    
 
@@ -170,13 +166,9 @@ class TodoyPage(QWidget):
 
 	if self.inputmode=="sketch":#(toolbar->downButton() == ToolBarButton::EPen || toolbar->downButton()== ToolBarButton::ELine)
 		self.paintLine(painter)
-#	else if (toolbar->downButton() == ToolBarButton::EErase)
-#	    paintPoint(painter)
-#	else if (toolbar->downButton() == ToolBarButton::ERectangle)
-#	    paintRect(painter)
-	elif self.inputmode=="auto":
-	    self.paintAuto(painter)
-
+	else: #self.inputmode=="auto":
+	        self.paintAuto(painter)
+		
 	painter.end()
 	#// Draw pixmap on the screen
 	self.update()
@@ -190,32 +182,17 @@ class TodoyPage(QWidget):
    def paintAuto(self, painter):
 	from math import atan, degrees
     	if (self.p2.x() != -1): 
-        	#w = (self.p2.x() - self.p1.x()) * 1
-        	#h = (self.p2.y() - self.p1.y()) * 1
-        	#c = QPoint(self.p1.x() + w / 2, self.p1.y() + h / 2)
 		orig=QPoint(400,240)
-		#rect=QRect(self.p1,self.p2)
-		#x1=-self.p1.x()+orig.x()
-		#y1=-self.p1.y()+orig.y()
-		#x2=-self.p2.x()+orig.x()
-		#y2=-self.p2.y()+orig.y()
-		#rect.setCoords(x2,y2,(orig.x()-x2),(orig.y()-y2)) #pie is drawed from the center of the rect.
-		#rect.moveCenter(orig)
 		pm=QPoint((self.p1.x()+self.p2.x())/2,(self.p1.y()+self.p2.y())/2)
 		painter.drawLine(orig, self.p1)
 		painter.drawLine(orig,self.p2)
 		#painter.drawLine(self.p1,self.p2)
 		painter.drawText(pm, self.text)
-		#startangle=-degrees(atan(y2/x2))*16
-		#endangle=-degrees(atan(y1/x1))*16
-		#spanangle= -(abs(startangle) + abs(endangle)) #360*16
-		#painter.drawRect(rect)
-		#painter.drawArc(rect,startangle,spanangle)
-		#painter.drawPie(rect,startangle,spanangle)
-        	#painter.drawPie(orig.x(),orig.y(), w, h,startangle,spanangle)
-		#el=QGraphicsEllipseItem()
-		#el.startAngle()
-		#self.paintText(painter)
+		painter.setFont(QFont("Arial", 8))
+		start_time="hhmmyy"
+		end_time="totototo"
+		painter.drawText(self.p1,start_time)
+		painter.drawText(self.p2,end_time)
 		
    def drawLineTo(self,endpoint):
 	painter=QPainter()
@@ -256,4 +233,8 @@ class TodoyPage(QWidget):
 	self.date=date.toString("yyyyMMdd")
 	print self.date
 	#self.update()
+
+   def validate(self):
+	self.paintToPixmap()
+	self.update()
 

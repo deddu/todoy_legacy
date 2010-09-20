@@ -60,6 +60,8 @@ class Main(QMainWindow):
 		self.todoypage.save()
 	elif QKeyEvent.key()==Qt.Key_L:
 		self.todoypage.load()
+	elif QKeyEvent.key()==Qt.Key_Return:
+		self.todoypage.validate()
 
 
    #def isChecked(ev):

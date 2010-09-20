@@ -183,14 +183,16 @@ class TodoyPage(QWidget):
 	from math import atan, degrees
     	if (self.p2.x() != -1): 
 		orig=QPoint(400,240)
+		self.orig=orig
 		pm=QPoint((self.p1.x()+self.p2.x())/2,(self.p1.y()+self.p2.y())/2)
 		painter.drawLine(orig, self.p1)
 		painter.drawLine(orig,self.p2)
 		#painter.drawLine(self.p1,self.p2)
 		painter.drawText(pm, self.text)
 		painter.setFont(QFont("Arial", 8))
-		start_time="hhmmyy"
-		end_time="totototo"
+		self.angles_time()
+		start_time=str(self.t0)
+		end_time=str(self.t1)
 		painter.drawText(self.p1,start_time)
 		painter.drawText(self.p2,end_time)
 		
@@ -237,4 +239,30 @@ class TodoyPage(QWidget):
    def validate(self):
 	self.paintToPixmap()
 	self.update()
+
+   def angles_det(self,p,o):
+	from todoy_otherfuns import anglescheck2
+	#from todoy_otherfuns import distance	
+	px= p.x() -o.x()
+	py= p.y() -o.y()
+	alpha=anglescheck2(px,py)
+	return alpha
+
+
+   def angles(self):
+	oOp1=self.angles_det(self.p1, self.orig)
+	oOp2=self.angles_det(self.p2, self.orig)
+	#if self.p1.y()>self.orig.x():
+	self.start_angle=oOp1
+	#else:
+	#	self.start_angle=oOp1
+	self.span_angle=oOp1+oOp2 # should check this one for various cases
+
+   def angles_time(self):
+	from todoy_otherfuns import time_conv
+	self.angles()
+	self.t0=((self.start_angle+90)/30)%12 #yep!
+	self.t1=((self.span_angle-self.start_angle+90)/30)%12#yep!
+	self.t0=time_conv(self.t0)
+	self.t1=time_conv(self.t1)
 

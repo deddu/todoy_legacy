@@ -20,7 +20,7 @@ class Main(QMainWindow):
 	 self.ui.dateEdit.setDate(today)
 	 self.ui.dateEdit.setDisplayFormat("yyyy.MM.dd")
 
-	 QObject.connect(self.ui.radioButton, SIGNAL("pressed()"), self.todoypage.setmode)
+	 QObject.connect(self.ui.toolButton, SIGNAL("pressed()"), self.todoypage.setmode)
 	 QObject.connect(self.ui.lineEdit, SIGNAL("textChanged(QString)"), self.todoypage.settext)
 	 QObject.connect(self.ui.dateEdit, SIGNAL("dateChanged(QDate)"),self.todoypage.setdate)
 
@@ -73,7 +73,7 @@ class Main(QMainWindow):
 
    #def isChecked(ev):
 	#checkbox.stateChanged
-	#if ui.radiobutton.isChecked():
+	#if ui.toolButton.isChecked():
 	#	print "eya"
 	#	pass
 

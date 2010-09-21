@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'another_2.ui'
+# Form implementation generated from reading ui file 'another.ui'
 #
-# Created: Tue Sep 21 16:00:20 2010
+# Created: Mon Sep 20 07:14:04 2010
 #      by: PyQt4 UI code generator 4.7.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -19,15 +19,12 @@ class Ui_MainWindow(object):
         self.gridLayout.setObjectName("gridLayout")
         self.horizontalLayout = QtGui.QHBoxLayout()
         self.horizontalLayout.setObjectName("horizontalLayout")
-        self.toolButton = QtGui.QToolButton(self.centralwidget)
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/no/sketch_freedraw.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.toolButton.setIcon(icon)
-        self.toolButton.setObjectName("toolButton")
-        self.horizontalLayout.addWidget(self.toolButton)
         self.lineEdit = QtGui.QLineEdit(self.centralwidget)
         self.lineEdit.setObjectName("lineEdit")
         self.horizontalLayout.addWidget(self.lineEdit)
+        self.radioButton = QtGui.QRadioButton(self.centralwidget)
+        self.radioButton.setObjectName("radioButton")
+        self.horizontalLayout.addWidget(self.radioButton)
         self.dateEdit = QtGui.QDateEdit(self.centralwidget)
         self.dateEdit.setObjectName("dateEdit")
         self.horizontalLayout.addWidget(self.dateEdit)
@@ -53,11 +50,10 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QtGui.QApplication.translate("MainWindow", "MainWindow", None, QtGui.QApplication.UnicodeUTF8))
-        self.toolButton.setText(QtGui.QApplication.translate("MainWindow", "...", None, QtGui.QApplication.UnicodeUTF8))
+        self.radioButton.setText(QtGui.QApplication.translate("MainWindow", "sketchmode", None, QtGui.QApplication.UnicodeUTF8))
         self.menuSettings.setTitle(QtGui.QApplication.translate("MainWindow", "settings", None, QtGui.QApplication.UnicodeUTF8))
         self.menuAbout.setTitle(QtGui.QApplication.translate("MainWindow", "about", None, QtGui.QApplication.UnicodeUTF8))
 
-import todoy_rc
 
 if __name__ == "__main__":
     import sys

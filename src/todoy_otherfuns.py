@@ -41,10 +41,14 @@ def time_conv(time):
 	excess=time-floor(time)
 	spareh=0
 	minutes=round(60*excess)
+	#print minutes
 	#if excess>=0.60: spareh=1
 	hours=floor((time+spareh)%24) 
-	#print hour, minutes
-	when=100*hours+minutes
+	#print hours, minutes
+	mins="0"+str(int(minutes))
+	mins=mins[-2:]
+	when="0"+str(int(hours))+mins
+	when=when[-4:]
 	return when#hours, minutes
 
 def angles(self):

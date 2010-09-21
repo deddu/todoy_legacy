@@ -36,20 +36,13 @@ class cal_handling():
 	f.write('\nCLASS:PRIVATE')
 	f.write('\nEND:VEVENT')
 	f.write('\nEND:VCALENDAR')
+	f.close()
 
    def gen_time_string(self,date,time):
 	timestring=str(date) + "T" + str(time) + "00Z"
 	return timestring
 	pass
 
-
-
-	f.write('\nEND:VCALENDAR')
-	f.close()
-
-
-
-	return True
 
    def cal_create(self):
 	f=open(self.filename,'w+b')

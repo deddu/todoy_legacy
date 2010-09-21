@@ -63,7 +63,7 @@ class Main(QMainWindow):
 		self.cal_add()
 
 
-   def cal_add(self)
+   def cal_add(self):
 		self.cal.date=self.todoypage.date
 		self.cal.start=self.todoypage.t0
 		self.cal.end=self.todoypage.t1

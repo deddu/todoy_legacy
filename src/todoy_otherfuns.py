@@ -44,7 +44,8 @@ def time_conv(time):
 	#if excess>=0.60: spareh=1
 	hours=floor((time+spareh)%24) 
 	#print hour, minutes
-	return hours, minutes
+	when=100*hours+minutes
+	return when#hours, minutes
 
 def angles(self):
 	oOp1=self.angles_from_pos(self.p1, self.orig)

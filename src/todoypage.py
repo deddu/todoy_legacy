@@ -24,6 +24,7 @@ class TodoyPage(QWidget):
 	 self.p2 = QPoint(-1, -1)
          self.date=strftime("%Y%m%d",gmtime())
 
+
    def openPixmap(self, fileName):
 	loadedPix=QPixmap()
 	if not loadedPix.load(fileName):

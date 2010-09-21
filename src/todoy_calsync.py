@@ -1,14 +1,18 @@
 #todoy_calsync.py
 class cal_handling():
    def __init__(self):
+	import os
 	self.filename="todoy.ics"
-	self.cal_create()
+	if not os.path.exists(self.filename):
+		self.cal_create()
+		print False
+	else: print True
 	self.summary="yay!"
 	self.date=20100921
 	self.start=1130
 	self.end=1230
 
-   def cal_add_event(self):
+   def add_event(self):
 	f = open( self.filename, 'r+b' )
 	lines = f.readlines()
 	f.close()
@@ -55,14 +59,6 @@ class cal_handling():
 	f.close()
 	return True
 
-   def cal_check(self):
-	pass
-
-   def cal_main(self):
-	if not cal_check():
-		cal_create()
-	cal_add_event()
-	pass
-	
+ 
 
 

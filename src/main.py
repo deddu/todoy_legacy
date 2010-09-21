@@ -5,7 +5,7 @@ from PyQt4.QtGui import *
 from time import strftime, gmtime
 from todoyUI import Ui_MainWindow
 from todoypage import TodoyPage
-
+import todoy_calsync
 
 
 class Main(QMainWindow):
@@ -14,14 +14,12 @@ class Main(QMainWindow):
          self.ui=Ui_MainWindow()#QWidget() 
          self.ui.setupUi(self)
 	 self.todoypage=TodoyPage(self)
-         #today=QDate()
-	 
+ 	 self.cal=todoy_calsync.cal_handling()
 	 eee=strftime("%Y%m%d",gmtime())
 	 today=QDate.fromString(eee,"yyyyMMdd")
-	 #print today, eee
 	 self.ui.dateEdit.setDate(today)
 	 self.ui.dateEdit.setDisplayFormat("yyyy.MM.dd")
-	 #self.ui.radioButton.Checked=True
+
 	 QObject.connect(self.ui.radioButton, SIGNAL("pressed()"), self.todoypage.setmode)
 	 QObject.connect(self.ui.lineEdit, SIGNAL("textChanged(QString)"), self.todoypage.settext)
 	 QObject.connect(self.ui.dateEdit, SIGNAL("dateChanged(QDate)"),self.todoypage.setdate)
@@ -62,6 +60,15 @@ class Main(QMainWindow):
 		self.todoypage.load()
 	elif QKeyEvent.key()==Qt.Key_Return:
 		self.todoypage.validate()
+		self.cal_add()
+
+
+   def cal_add(self)
+		self.cal.date=self.todoypage.date
+		self.cal.start=self.todoypage.t0
+		self.cal.end=self.todoypage.t1
+		self.cal.summary=self.todoypage.text
+		self.cal.add_event()
 
 
    #def isChecked(ev):

@@ -22,7 +22,6 @@ def anglescheck2(px,py):
 	elif py<0 and px>0:	angle=2*math.pi-math.acos(px/radius)
 	elif py<0 and px<0:	angle=math.pi+math.asin(-py/radius)
 	else: angle=math.pi-math.asin(py/radius) #px<0 py>0 :)
-
 	angle=math.degrees(angle)
 	return angle
 
@@ -35,7 +34,6 @@ def angles_from_pos(self,p,o):
 	b=distance(p.x(),p.y(),o.x(),o.y())
 	ahh = 59.0362434679
 	alpha=angle_from_sides_deg(a,b,c)-ahh 
-	
 	return alpha
 
 def time_conv(time):
@@ -43,15 +41,10 @@ def time_conv(time):
 	excess=time-floor(time)
 	spareh=0
 	minutes=round(60*excess)
-	if excess>=0.60: spareh=1
+	#if excess>=0.60: spareh=1
 	hours=floor((time+spareh)%24) 
 	#print hour, minutes
-
-
-
 	return hours, minutes
-
-
 
 def angles(self):
 	oOp1=self.angles_from_pos(self.p1, self.orig)

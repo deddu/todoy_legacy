@@ -58,8 +58,9 @@ class Main(QMainWindow):
 		self.todoypage.save()
 	elif QKeyEvent.key()==Qt.Key_L:
 		self.todoypage.load()
-	elif QKeyEvent.key()==Qt.Key_Return:
+	elif QKeyEvent.key()==Qt.Key_V:
 		self.todoypage.validate()
+	elif QKeyEvent.key()==Qt.Key_A:
 		self.cal_add()
 
 

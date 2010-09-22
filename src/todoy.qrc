@@ -1,5 +1,12 @@
 <RCC>
   <qresource prefix="no">
+    <file>widgets_time_editor.png</file>
+    <file>notes_save.png</file>
+    <file>general_undo.png</file>
+    <file>general_add.png</file>
+    <file>clock_calendar_birthday.png</file>
+    <file>clock_calendar_alarm.png</file>
+    <file>clock_calendar_task.png</file>
     <file>sketch_freedraw.png</file>
   </qresource>
 </RCC>

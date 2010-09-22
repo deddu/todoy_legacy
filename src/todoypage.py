@@ -219,10 +219,10 @@ class TodoyPage(QWidget):
 
         QWidget.resizeEvent(self, event)
 
-   def setmode(self):#, event):
+   def setmode(self, mode):#, event):
 	#print "uff"
-	if self.inputmode=="sketch": self.inputmode="auto"
-	else: self.inputmode="sketch"
+	if mode=="sketch": self.inputmode="sketch"
+	else: self.inputmode="auto"
 	#	print "cacca"
 	#else:
 	#	self.inputmode="auto"

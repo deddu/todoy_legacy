@@ -19,11 +19,16 @@ class Main(QMainWindow):
 	 today=QDate.fromString(eee,"yyyyMMdd")
 	 self.ui.dateEdit.setDate(today)
 	 self.ui.dateEdit.setDisplayFormat("yyyy.MM.dd")
+	 self.ui.dateEdit_2.setDate(today)
+	 self.ui.dateEdit_2.setDisplayFormat("yyyy.MM.dd")
+	 self.setmode1()
 
-	 QObject.connect(self.ui.toolButton, SIGNAL("pressed()"), self.todoypage.setmode)
+	 QObject.connect(self.ui.toolButton_3, SIGNAL("pressed()"), self.setmode0)
+	 QObject.connect(self.ui.toolButton, SIGNAL("pressed()"), self.setmode1)
+	 #QObject.connect(self.ui.toolButton, SIGNAL("pressed()"), self.todoypage.setmode)
 	 QObject.connect(self.ui.lineEdit, SIGNAL("textChanged(QString)"), self.todoypage.settext)
 	 QObject.connect(self.ui.dateEdit, SIGNAL("dateChanged(QDate)"),self.todoypage.setdate)
-
+	 QObject.connect(self.ui.dateEdit_2, SIGNAL("dateChanged(QDate)"),self.todoypage.setdate)
 
 
 	 try:
@@ -31,6 +36,16 @@ class Main(QMainWindow):
             USE_MAEMO = True
          except:
             USE_MAEMO = False
+
+
+   def setmode0(self):
+        self.ui.stackedWidget.setCurrentIndex(0)
+	self.todoypage.setmode("sketch")
+   def setmode1(self):
+        self.ui.stackedWidget.setCurrentIndex(1)
+	self.todoypage.setmode("auto")
+
+
 
    def keyPressEvent (self, QKeyEvent):
 	#if QKeyEvent.matches (self, QKeySequence.StandardKey)

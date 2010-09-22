@@ -230,7 +230,10 @@ class TodoyPage(QWidget):
    def settext(self, text):
 	self.text=text
 
-		#implement_delete_all
+   def color(self):
+	from random import choice
+	color=choice([Qt.blue,Qt.black,Qt.red,Qt.green])
+	self.pen.setColor(color)
 		
    def setdate(self, date):
 	self.date=date.toString("yyyyMMdd")

@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'another_3.ui'
 #
-# Created: Wed Sep 22 12:08:05 2010
+# Created: Wed Sep 22 14:46:21 2010
 #      by: PyQt4 UI code generator 4.7.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -106,23 +106,27 @@ class Ui_MainWindow(object):
         self.line_3.setObjectName("line_3")
         self.horizontalLayout_5.addWidget(self.line_3)
         self.lineEdit = QtGui.QLineEdit(self.widget_2)
+        self.lineEdit.setMinimumSize(QtCore.QSize(0, 30))
         self.lineEdit.setObjectName("lineEdit")
         self.horizontalLayout_5.addWidget(self.lineEdit)
         self.horizontalLayout_6 = QtGui.QHBoxLayout()
         self.horizontalLayout_6.setObjectName("horizontalLayout_6")
         self.toolButton_alarm = QtGui.QToolButton(self.widget_2)
+        self.toolButton_alarm.setEnabled(False)
         icon6 = QtGui.QIcon()
         icon6.addPixmap(QtGui.QPixmap(":/no/clock_calendar_alarm.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.toolButton_alarm.setIcon(icon6)
         self.toolButton_alarm.setObjectName("toolButton_alarm")
         self.horizontalLayout_6.addWidget(self.toolButton_alarm)
         self.toolButton_event = QtGui.QToolButton(self.widget_2)
+        self.toolButton_event.setEnabled(False)
         icon7 = QtGui.QIcon()
         icon7.addPixmap(QtGui.QPixmap(":/no/clock_calendar_birthday.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.toolButton_event.setIcon(icon7)
         self.toolButton_event.setObjectName("toolButton_event")
         self.horizontalLayout_6.addWidget(self.toolButton_event)
         self.toolButton_todo = QtGui.QToolButton(self.widget_2)
+        self.toolButton_todo.setEnabled(False)
         icon8 = QtGui.QIcon()
         icon8.addPixmap(QtGui.QPixmap(":/no/clock_calendar_task.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.toolButton_todo.setIcon(icon8)
@@ -140,14 +144,17 @@ class Ui_MainWindow(object):
         self.menubar.setObjectName("menubar")
         self.menuSettings = QtGui.QMenu(self.menubar)
         self.menuSettings.setObjectName("menuSettings")
-        self.menuAbout = QtGui.QMenu(self.menubar)
-        self.menuAbout.setObjectName("menuAbout")
         MainWindow.setMenuBar(self.menubar)
+        self.actionSettings = QtGui.QAction(MainWindow)
+        self.actionSettings.setObjectName("actionSettings")
+        self.actionAbout = QtGui.QAction(MainWindow)
+        self.actionAbout.setObjectName("actionAbout")
+        self.menuSettings.addAction(self.actionSettings)
+        self.menuSettings.addAction(self.actionAbout)
         self.menubar.addAction(self.menuSettings.menuAction())
-        self.menubar.addAction(self.menuAbout.menuAction())
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -162,7 +169,8 @@ class Ui_MainWindow(object):
         self.toolButton_event.setText(QtGui.QApplication.translate("MainWindow", "...", None, QtGui.QApplication.UnicodeUTF8))
         self.toolButton_todo.setText(QtGui.QApplication.translate("MainWindow", "...", None, QtGui.QApplication.UnicodeUTF8))
         self.menuSettings.setTitle(QtGui.QApplication.translate("MainWindow", "settings", None, QtGui.QApplication.UnicodeUTF8))
-        self.menuAbout.setTitle(QtGui.QApplication.translate("MainWindow", "about", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionSettings.setText(QtGui.QApplication.translate("MainWindow", "settings", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionAbout.setText(QtGui.QApplication.translate("MainWindow", "about", None, QtGui.QApplication.UnicodeUTF8))
 
 import todoy_rc
 

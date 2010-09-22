@@ -25,12 +25,17 @@ class Main(QMainWindow):
 
 	 QObject.connect(self.ui.toolButton_3, SIGNAL("pressed()"), self.setmode0)
 	 QObject.connect(self.ui.toolButton, SIGNAL("pressed()"), self.setmode1)
-	 #QObject.connect(self.ui.toolButton, SIGNAL("pressed()"), self.todoypage.setmode)
+	 #QObject.connect(self.ui.toolButton, SIGNAL("pressed()"), self.todoypage.setmode)editingFinished ()
 	 QObject.connect(self.ui.lineEdit, SIGNAL("textChanged(QString)"), self.todoypage.settext)
 	 QObject.connect(self.ui.dateEdit, SIGNAL("dateChanged(QDate)"),self.todoypage.setdate)
 	 QObject.connect(self.ui.dateEdit_2, SIGNAL("dateChanged(QDate)"),self.todoypage.setdate)
-
-
+ 	 QObject.connect(self.ui.lineEdit, SIGNAL("editingFinished()"), self.confirm)
+	#ui key connections:
+	 QObject.connect(self.ui.toolButton_undo, SIGNAL("pressed()"), self.todoypage.undo)#undo
+	 QObject.connect(self.ui.toolButton_trash, SIGNAL("pressed()"), self.clear)#trash
+	 QObject.connect(self.ui.toolButton_color, SIGNAL("pressed()"), self.todoypage.color)#color
+	 QObject.connect(self.ui.toolButton_save, SIGNAL("pressed()"), 	self.todoypage.save)#save
+#	 QObject.connect(self.ui.toolButton_3, SIGNAL("pressed()"), self.setmode0)
 	 try:
             self.setAttribute(Qt.WA_Maemo5StackedWindow)
             USE_MAEMO = True
@@ -64,7 +69,7 @@ class Main(QMainWindow):
 	elif QKeyEvent.key()==Qt.Key_K:
 		self.todoypage.pen = QPen(Qt.black, 4, Qt.SolidLine)
 	elif QKeyEvent.key()==Qt.Key_C:
-		self.todoypage.openPixmap("todoy_bkgrnd.png")
+		self.clear()
 	elif QKeyEvent.key()==Qt.Key_W:
 		self.todoypage.pen = QPen(Qt.white, 10, Qt.SolidLine)
 	elif QKeyEvent.key()==Qt.Key_Z:
@@ -75,6 +80,12 @@ class Main(QMainWindow):
 		self.todoypage.load()
 	elif QKeyEvent.key()==Qt.Key_V:
 		self.todoypage.validate()
+#	elif QKeyEvent.key()==Qt.Key_Enter:
+#		self.todoypage.validate()
+#		self.cal_add()
+#	elif QKeyEvent.key()==Qt.Key_Return:
+#		self.todoypage.validate()
+#		self.cal_add()
 	elif QKeyEvent.key()==Qt.Key_A:
 		self.cal_add()
 
@@ -83,16 +94,15 @@ class Main(QMainWindow):
 		self.cal.date=self.todoypage.date
 		self.cal.start=self.todoypage.t0
 		self.cal.end=self.todoypage.t1
-		self.cal.summary=self.todoypage.text
+		self.cal.summary=str(self.todoypage.text)
 		self.cal.add_event()
 
 
-   #def isChecked(ev):
-	#checkbox.stateChanged
-	#if ui.toolButton.isChecked():
-	#	print "eya"
-	#	pass
-
+   def confirm(self):
+	self.todoypage.validate()
+	self.cal_add()
+   def clear(self):
+	self.todoypage.openPixmap("todoy_bkgrnd.png")
 
 
 def main():

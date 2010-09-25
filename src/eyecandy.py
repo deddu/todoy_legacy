@@ -1,8 +1,17 @@
 #eyecandy.py
 
-def pizzaslabs():
+import sys
+from PyQt4 import *
+from PyQt4.QtCore import *
+from PyQt4.QtGui import *
+
+class eyecandy(QGraphicsObject):
+   def pizzaslabs(self):
 	pass
-def load_theme():
+   def time_circles(self):
+	
 	pass
-def settings():
+   def load_theme(self):
+	pass
+   def settings(self):
 	pass

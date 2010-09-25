@@ -2,7 +2,7 @@
 class cal_handling():
    def __init__(self):
 	import os
-	self.filename="/home/user/.todoy/todoy.ics"
+	self.filename="todoy.ics"#"/home/user/.todoy/todoy.ics"
 	if not os.path.exists(self.filename):
 		self.cal_create()
 		print False

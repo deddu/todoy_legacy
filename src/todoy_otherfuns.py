@@ -36,11 +36,11 @@ def angles_from_pos(self,p,o):
 	alpha=angle_from_sides_deg(a,b,c)-ahh 
 	return alpha
 
-def time_conv(time):
+def time_conv(time, step=1):
 	from math import floor
 	excess=time-floor(time)
 	spareh=0
-	minutes=round(60*excess)
+	minutes=(round((60/step)*excess)*step)%60
 	#print minutes
 	#if excess>=0.60: spareh=1
 	hours=floor((time+spareh)%24) 

@@ -192,11 +192,30 @@ class TodoyPage(QWidget):
 		#painter.drawLine(self.p1,self.p2)
 		painter.drawText(pm, self.text)
 		painter.setFont(QFont("Arial", 8))
-		self.angles_time()
+		radi=self.getRadi()
+		if radi<100:
+			self.angles_time(15)
+			painter.setBrush(Qt.yellow)
+			painter.setOpacity(0.15)
+			#painter.setBrush(Qt.CrossPattern)
+			painter.drawEllipse(orig, 100,100)
+			#painter.fillPath(a,Qt.cyan)
+		elif radi>=100 and radi <200:
+			painter.setBrush(Qt.cyan)
+			painter.setOpacity(0.15)
+			#painter.setBrush(Qt.Dense7Pattern)
+			painter.drawEllipse(orig, 200,200)			
+			self.angles_time(5)
+		else:
+			self.angles_time(1)
+			#painter.drawEllipse(orig, 300,300)
 		start_time=str(self.t0)
 		end_time=str(self.t1)
+		painter.setOpacity(1.0)
 		painter.drawText(self.p1,start_time)
 		painter.drawText(self.p2,end_time)
+
+		#eyecandy.drawarea(self.orig, )
 		
    def drawLineTo(self,endpoint):
 	painter=QPainter()
@@ -253,6 +272,10 @@ class TodoyPage(QWidget):
 	alpha=anglescheck2(px,py)
 	return alpha
 
+   def getRadi(self):
+	from todoy_otherfuns import distance
+	radi=distance(self.orig.x(),self.orig.y(),self.p2.x(),self.p2.y())
+	return radi
 
    def angles(self):
 	oOp1=self.angles_det(self.p1, self.orig)
@@ -263,11 +286,11 @@ class TodoyPage(QWidget):
 	#	self.start_angle=oOp1
 	self.span_angle=oOp1+oOp2 # should check this one for various cases
 
-   def angles_time(self):
+   def angles_time(self, step):
 	from todoy_otherfuns import time_conv
 	self.angles()
 	self.t0=((self.start_angle+90)/30)%12 #yep!
 	self.t1=((self.span_angle-self.start_angle+90)/30)%12#yep!
-	self.t0=time_conv(self.t0)
-	self.t1=time_conv(self.t1)
+	self.t0=time_conv(self.t0, step)
+	self.t1=time_conv(self.t1, step)
 

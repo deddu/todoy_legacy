@@ -68,19 +68,20 @@ class TodoyPage(QWidget):
 	infos=("Q: Quit, C: Clear, B: Blue, R: Red, G: Green, K: Black, Z: Undo.")
 	p.drawText(20,90, infos)
 	pen=self.pen#QPen()
-	draftPen=QPen()
+	self.draftPen=QPen()
 	#color = QColor(Qt.black)
 	#pen.setColor(color)
 	#pen.setStyle(Qt.SolidLine)
-	draftPen.setColor(Qt.black)
-	draftPen.setStyle(Qt.DashLine)
-	draftPen.setWidth(1)
+	self.draftPen.setColor(Qt.black)
+	self.draftPen.setStyle(Qt.DashLine)
+	self.draftPen.setWidth(1)
 	p.drawPixmap(QPoint(0, 0), self.pixmap);
 	if self.mousepressed and self.inputmode=="sketch":#(toolbar->downButton() != ToolBarButton::EPen)
-   		p.setPen(draftPen) #// ongoing drawing, not final (waiting for mouseRelease)
+   		p.setPen(self.draftPen) #// ongoing drawing, not final (waiting for mouseRelease)
         	#if self.inputmode=="sketch":
         	self.paintLine(p)
 	if self.mousepressed and self.inputmode=="auto":
+		#p.setPen(self.draftPen)
 	 	self.paintAuto(p)
 
 
@@ -91,7 +92,8 @@ class TodoyPage(QWidget):
 		#self.lastpoint=ev.pos()
 		self.mousepressed=True
 		self.p1 = ev.pos()
-    		self.p2 = QPoint(-1, -1)    
+    		self.p2 = QPoint(-1, -1)
+		self.showcircles=True    
 		self.saveForUndo()
 
 
@@ -129,9 +131,11 @@ class TodoyPage(QWidget):
 
 
    def mouseReleaseEvent(self,event):
+	self.showcircles=False
 	if (event.buttons() & Qt.LeftButton) and self.mousepressed:
         #   self.drawLineTo(event.pos())
 	   self.mousepressed=False
+	   
 	#if (toolbar->downButton() == ToolBarButton::EPen):setAttribute(Qt::WA_OpaquePaintEvent, false)
 	    #// Drawing finished. Update pixmap (paper)
 	    #// Paint to pixmap and then pixmap on screen
@@ -193,22 +197,22 @@ class TodoyPage(QWidget):
 		painter.drawText(pm, self.text)
 		painter.setFont(QFont("Arial", 8))
 		radi=self.getRadi()
-		if radi<100:
-			self.angles_time(15)
-			painter.setBrush(Qt.yellow)
-			painter.setOpacity(0.15)
-			#painter.setBrush(Qt.CrossPattern)
-			painter.drawEllipse(orig, 100,100)
-			#painter.fillPath(a,Qt.cyan)
-		elif radi>=100 and radi <200:
-			painter.setBrush(Qt.cyan)
-			painter.setOpacity(0.15)
-			#painter.setBrush(Qt.Dense7Pattern)
-			painter.drawEllipse(orig, 200,200)			
-			self.angles_time(5)
+		if radi<100 and self.showcircles:
+				self.angles_time(15)
+				painter.setBrush(Qt.yellow)
+				painter.setOpacity(0.15)
+				#painter.setBrush(Qt.CrossPattern)
+				painter.drawEllipse(orig, 100,100)
+				#painter.fillPath(a,Qt.cyan)
+		elif radi>=100 and radi <200 and self.showcircles:
+				painter.setBrush(Qt.cyan)
+				painter.setOpacity(0.15)
+				#painter.setBrush(Qt.Dense7Pattern)
+				painter.drawEllipse(orig, 200,200)			
+				self.angles_time(5)
 		else:
-			self.angles_time(1)
-			#painter.drawEllipse(orig, 300,300)
+				self.angles_time(1)
+				#painter.drawEllipse(orig, 300,300)
 		start_time=str(self.t0)
 		end_time=str(self.t1)
 		painter.setOpacity(1.0)

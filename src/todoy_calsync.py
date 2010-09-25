@@ -11,8 +11,13 @@ class cal_handling():
 	self.date=20100921
 	self.start=1130
 	self.end=1230
+	self.eventlist=[]
 
    def add_event(self):
+	self.eventlist.append([self.date,self.start,self.end,self.summary])
+
+
+   def parse_events(self):
 	f = open( self.filename, 'r+b' )
 	lines = f.readlines()
 	f.close()
@@ -23,18 +28,23 @@ class cal_handling():
 	f.close()
 	
 	f=open(self.filename,'a+b')
-	f.write('BEGIN:VEVENT')
-	f.write('\nCATEGORIES:MEETING')
-	f.write('\nSTATUS:TENTATIVE')
-	f.write('\nDTSTART:')
-	f.write(self.gen_time_string(self.date,self.start))	#(20100921T033000Z')
-	f.write('\nDTEND:')
-	f.write(self.gen_time_string(self.date,self.end))#(20100921T043000Z')
-	f.write('\nSUMMARY:')
-	f.write(self.summary)#(Your Proposal Review')
-	f.write('\nDESCRIPTION:Created with todoy!')
-	f.write('\nCLASS:PRIVATE')
-	f.write('\nEND:VEVENT')
+	for item in self.eventlist:
+		date=item[0]
+		start=item[1]
+		end=item[2]
+		summary=item[3]
+		f.write('BEGIN:VEVENT')
+		f.write('\nCATEGORIES:MEETING')
+		f.write('\nSTATUS:TENTATIVE')
+		f.write('\nDTSTART:')
+		f.write(self.gen_time_string(date,start))	#(20100921T033000Z')
+		f.write('\nDTEND:')
+		f.write(self.gen_time_string(date,end))#(20100921T043000Z')
+		f.write('\nSUMMARY:')
+		f.write(summary)#(Your Proposal Review')
+		f.write('\nDESCRIPTION:Created with todoy!')
+		f.write('\nCLASS:PRIVATE')
+		f.write('\nEND:VEVENT')
 	f.write('\nEND:VCALENDAR')
 	f.close()
 

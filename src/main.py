@@ -36,7 +36,8 @@ class Main(QMainWindow):
 	 QObject.connect(self.ui.toolButton_undo, SIGNAL("pressed()"), self.todoypage.undo)#undo
 	 QObject.connect(self.ui.toolButton_trash, SIGNAL("pressed()"), self.clear)#trash
 	 QObject.connect(self.ui.toolButton_color, SIGNAL("pressed()"), self.todoypage.color)#color
-	 QObject.connect(self.ui.toolButton_save, SIGNAL("pressed()"), 	self.todoypage.save)#save
+	 QObject.connect(self.ui.toolButton_save, SIGNAL("pressed()"), 	self.todoypage.save)
+	 QObject.connect(self.ui.toolButton_save, SIGNAL("pressed()"), 	self.cal.parse_events)#save
 #	 QObject.connect(self.ui.toolButton_3, SIGNAL("pressed()"), self.setmode0)
 	 try:
             self.setAttribute(Qt.WA_Maemo5StackedWindow)

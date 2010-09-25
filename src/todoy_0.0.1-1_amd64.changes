@@ -1,0 +1,29 @@
+Format: 1.8
+Date: Sat, 25 Sep 2010 08:05:58 +0000
+Source: todoy
+Binary: todoy
+Architecture: source all
+Version: 0.0.1-1
+Distribution: stable
+Urgency: low
+Maintainer: Andrea Cadeddu <mrernia@gmail.com>
+Changed-By: Andrea Cadeddu <mrernia@gmail.com>
+Description: 
+ todoy      - A fast revolutionary way to handle your duty and your appointment
+Changes: 
+ todoy (0.0.1-1) stable; urgency=low
+ .
+   First Edition.
+Checksums-Sha1: 
+ 6a0b8b39ca53c95c277ae4de3e147aeb735ffaeb 480 todoy_0.0.1-1.dsc
+ 6479edd3e03c6a9396e0378eb535f78a23233d33 88084 todoy_0.0.1-1.tar.gz
+ b07748aeea06ce4cdd1ef65f5a4bd5914a8f6564 88900 todoy_0.0.1-1_all.deb
+Checksums-Sha256: 
+ 720b29b90414ae8479b53a1c5769d51f3ea7e1ccd38803693e8216d1d5cb58f6 480 todoy_0.0.1-1.dsc
+ 3699b057e0d958c9ee83181e9ed931989c6316362922c0e79d1ee3b07880ce5f 88084 todoy_0.0.1-1.tar.gz
+ e6011769b0cbe76329a2e53daad7d419cfb0de199a08e3604c3960cb9b8ef1ea 88900 todoy_0.0.1-1_all.deb
+Files: 
+ b8abc4f58eb328ae00061f2425a16f96 480 user/office extra todoy_0.0.1-1.dsc
+ 0254824c8ea71deebb34d464e5fa2990 88084 user/office extra todoy_0.0.1-1.tar.gz
+ 1c2112c752e17657d03df9f5135971c3 88900 user/office extra todoy_0.0.1-1_all.deb
+Bugtracker: http://bugs.maemo.org

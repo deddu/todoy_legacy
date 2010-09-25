@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0.0
+Comment=Todoy yay!
+Name=Todoy
+Exec=/opt/todoy/todoy.py
+Icon=todoy_ico_48
+X-Icon-path=/usr/share/icons
+X-Window-Icon=todoy_ico_48
+Type=Application
+X-Osso-Type=application/x-executable

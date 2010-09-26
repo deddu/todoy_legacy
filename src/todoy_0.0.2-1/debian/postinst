@@ -1,0 +1,2 @@
+#!/bin/sh
+    chmod +x /opt/todoy/todoy.py

@@ -28,7 +28,7 @@ class todoy_config():
     def __init__(self):
 	import os
 
-	self.user_path=""#"/home/user/.todoy"
+	self.user_path="/home/user/.todoy/"
 	self.install_path="/opt/todoy/"
 
 ################### auto mode ########################

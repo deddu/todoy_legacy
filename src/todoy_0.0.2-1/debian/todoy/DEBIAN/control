@@ -1,0 +1,10 @@
+Package: todoy
+Version: 0.0.2-1
+Architecture: all
+Maintainer: Andrea Cadeddu <mrernia@gmail.com>
+Installed-Size: 416
+Depends: python2.5, python-osso, python2.5-qt4-gui, python2.5-qt4-core
+Section: user/office
+Priority: extra
+Description: A fast revolutionary way to handle your duty and your appointments. With desktop widget and calendar export
+Bugtracker: http://bugs.maemo.org

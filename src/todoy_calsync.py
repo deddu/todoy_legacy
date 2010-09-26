@@ -26,9 +26,13 @@
 
 
 class cal_handling():
-   def __init__(self):
+   def __init__(self,conf):
 	import os
-	self.filename="todoy.ics"#"/home/user/.todoy/todoy.ics"
+	self.conf=conf
+	self.filename=self.conf.cal_file#"todoy.ics"#"/home/user/.todoy/todoy.ics"
+	self.default_event=self.conf.default_ev
+	self.cal_sync_on=self.conf.cal_sync
+
 	if not os.path.exists(self.filename):
 		self.cal_create()
 		print False
@@ -40,7 +44,8 @@ class cal_handling():
 	self.eventlist=[]
 
    def add_event(self):
-	self.eventlist.append([self.date,self.start,self.end,self.summary])
+	if self.cal_sync_on:
+		self.eventlist.append([self.date,self.start,self.end,self.summary])
 
 
    def parse_events(self):

@@ -31,20 +31,21 @@ from time import strftime, gmtime
 
 
 class TodoyPage(QWidget):
-   def __init__(self,parent):
+   def __init__(self,parent,conf):
 	 QWidget.__init__(self,parent)
 	 self.mousepressed=False
+	 self.conf=conf
 	 self.inputmode= "auto"#"sketch"#or auto
 	 self.pixmap=QPixmap()
 	 self.undoPixmap=QPixmap()
 	 self.image = QImage()
-	 self.defpath="/home/user/.todoy/"
+	 self.defpath=self.conf.user_path#"/home/user/.todoy/"
 	 self.text=""
          #self.lastPoint = QPoint()
 	 self.setWindowTitle("Todoy")
          self.resize(800,350)
-	 self.openImage("todoy_bkgrnd.png")
-	 self.openPixmap("todoy_bkgrnd.png")
+	 self.openImage(self.conf.bkgrnd)
+	 self.openPixmap(self.conf.bkgrnd)
 	 self.pen=QPen(Qt.black, 4, Qt.SolidLine)
 	 self.p1 = QPoint(-1, -1)
 	 self.p2 = QPoint(-1, -1)
@@ -222,21 +223,21 @@ class TodoyPage(QWidget):
 		painter.drawText(pm, self.text)
 		painter.setFont(QFont("Arial", 8))
 		radi=self.getRadi()
-		if radi<100 and self.showcircles:
-				self.angles_time(15)
+		if radi<self.conf.g_rad_inner and self.showcircles:
+				self.angles_time(self.conf.g_scale_inner)
 				painter.setBrush(Qt.yellow)
-				painter.setOpacity(0.15)
+				painter.setOpacity(self.conf.ellipse_opacity)
 				#painter.setBrush(Qt.CrossPattern)
-				painter.drawEllipse(orig, 100,100)
+				painter.drawEllipse(orig, self.conf.g_rad_inner,self.conf.g_rad_inner)
 				#painter.fillPath(a,Qt.cyan)
-		elif radi>=100 and radi <200 and self.showcircles:
+		elif radi>=self.conf.g_rad_inner and radi <self.conf.g_rad_middle and self.showcircles:
 				painter.setBrush(Qt.cyan)
-				painter.setOpacity(0.15)
+				painter.setOpacity(self.conf.ellipse_opacity)#0.15
 				#painter.setBrush(Qt.Dense7Pattern)
-				painter.drawEllipse(orig, 200,200)			
-				self.angles_time(5)
+				painter.drawEllipse(orig, self.conf.g_rad_middle,self.conf.g_rad_middle)			
+				self.angles_time(self.conf.g_scale_middle)
 		else:
-				self.angles_time(1)
+				self.angles_time(self.conf.g_scale_outer)
 				#painter.drawEllipse(orig, 300,300)
 		start_time=str(self.t0)
 		end_time=str(self.t1)

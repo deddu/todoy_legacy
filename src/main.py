@@ -31,6 +31,7 @@ from time import strftime, gmtime
 from todoyUI import Ui_MainWindow
 from todoypage import TodoyPage
 import todoy_calsync
+from todoy_conf import todoy_config
 
 
 class Main(QMainWindow):
@@ -38,15 +39,18 @@ class Main(QMainWindow):
          QMainWindow.__init__(self)
          self.ui=Ui_MainWindow()#QWidget() 
          self.ui.setupUi(self)
-	 self.todoypage=TodoyPage(self)
- 	 self.cal=todoy_calsync.cal_handling()
+	 self.conf=todoy_config()
+ 	 self.cal=todoy_calsync.cal_handling(self.conf)
+	 self.todoypage=TodoyPage(self,self.conf)
 	 eee=strftime("%Y%m%d",gmtime())
 	 today=QDate.fromString(eee,"yyyyMMdd")
 	 self.ui.dateEdit.setDate(today)
 	 self.ui.dateEdit.setDisplayFormat("yyyy.MM.dd")
 	 self.ui.dateEdit_2.setDate(today)
 	 self.ui.dateEdit_2.setDisplayFormat("yyyy.MM.dd")
-	 self.setmode1()
+	 if 	self.conf.default_mode =="auto":
+		self.setmode1()
+	 else: self.setmode0()
 
 	 QObject.connect(self.ui.toolButton_3, SIGNAL("pressed()"), self.setmode0)
 	 QObject.connect(self.ui.toolButton, SIGNAL("pressed()"), self.setmode1)
@@ -128,7 +132,7 @@ class Main(QMainWindow):
 	self.todoypage.validate()
 	self.cal_add()
    def clear(self):
-	self.todoypage.openPixmap("todoy_bkgrnd.png")
+	self.todoypage.openPixmap(self.conf.bkgrnd)
 
 
 def main():

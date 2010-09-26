@@ -1,5 +1,27 @@
 #todoy_otherfuns.py
 
+###The MIT License
+
+#Copyright (c) 2010  andrea cadeddu, mrernia@gmail.com
+
+#Permission is hereby granted, free of charge, to any person obtaining a copy
+#of this software and associated documentation files (the "Software"), to deal
+#in the Software without restriction, including without limitation the rights
+#to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#copies of the Software, and to permit persons to whom the Software is
+#furnished to do so, subject to the following conditions:
+
+#The above copyright notice and this permission notice shall be included in
+#all copies or substantial portions of the Software.
+
+#THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+#OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+#THE SOFTWARE.
+###
 
 def angle_from_sides_deg(a,b,c):
 	from math import acos, degrees
@@ -41,6 +63,7 @@ def time_conv(time, step=1):
 	excess=time-floor(time)
 	spareh=0
 	minutes=(round((60/step)*excess)*step)%60
+	#looks ugly but it works: rounding the first part generate an int between 0 and 60/step. then multiplying by step after rounding grants that 		the time will be again in minutes. and the final modulo accounts that there are no difference between 60 and 00. 
 	#print minutes
 	#if excess>=0.60: spareh=1
 	hours=floor((time+spareh)%24) 

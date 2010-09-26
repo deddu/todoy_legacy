@@ -217,9 +217,11 @@ class TodoyPage(QWidget):
 		orig=QPoint(400,240)
 		self.orig=orig
 		pm=QPoint((self.p1.x()+self.p2.x())/2,(self.p1.y()+self.p2.y())/2)
-		painter.drawLine(orig, self.p1)
-		painter.drawLine(orig,self.p2)
+		#painter.drawLine(orig, self.p1)
+		#painter.drawLine(orig,self.p2)
 		#painter.drawLine(self.p1,self.p2)
+
+
 		painter.drawText(pm, self.text)
 		painter.setFont(QFont("Arial", 8))
 		radi=self.getRadi()
@@ -238,7 +240,23 @@ class TodoyPage(QWidget):
 				self.angles_time(self.conf.g_scale_middle)
 		else:
 				self.angles_time(self.conf.g_scale_outer)
-				#painter.drawEllipse(orig, 300,300)
+		rect=QRect(0,0,800,480)#orig,self.p2)
+
+		painter.save()
+		#painter.translate(orig)
+		#scalingx=abs(self.p2.x())/800
+		#scalingy=abs(self.p2.y())/400
+		#painter.scale(scalingx,scalingy)
+		#rect2=QRect(-self.p2.x(),-self.p2.y(),+self.p2.x(),+self.p2.y())	#scaleRect!
+
+
+		if self.spantu <0:self.spantu=360+self.spantu
+		#elif self.spantu>360:self.spantu=self.spantu -360
+		#painter.drawRect(rect2)
+		painter.drawPie(rect, (-self.start_angle)*16, (self.spantu-360)*16)
+		painter.restore()
+
+		#painter.drawEllipse(orig, 300,300)
 		start_time=str(self.t0)
 		end_time=str(self.t1)
 		painter.setOpacity(1.0)
@@ -314,7 +332,8 @@ class TodoyPage(QWidget):
 	self.start_angle=oOp1
 	#else:
 	#	self.start_angle=oOp1
-	self.span_angle=oOp1+oOp2 # should check this one for various cases
+	self.spantu=(oOp1-oOp2)
+	self.span_angle= (oOp1+oOp2) # should check this one for various cases
 
    def angles_time(self, step):
 	from todoy_otherfuns import time_conv

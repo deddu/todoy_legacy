@@ -247,13 +247,14 @@ class TodoyPage(QWidget):
 		#scalingx=abs(self.p2.x())/800
 		#scalingy=abs(self.p2.y())/400
 		#painter.scale(scalingx,scalingy)
-		#rect2=QRect(-self.p2.x(),-self.p2.y(),+self.p2.x(),+self.p2.y())	#scaleRect!
+		rect2=QRect(orig.x()-radi,orig.y()-radi,2*radi,2*radi)#(orig.x()-self.p2.x(),orig.y()-self.p2.y(),2*radi,2*radi)
+		#set as 200-radius!	#scaleRect!
 
 
 		if self.spantu <0:self.spantu=360+self.spantu
 		#elif self.spantu>360:self.spantu=self.spantu -360
 		#painter.drawRect(rect2)
-		painter.drawPie(rect, (-self.start_angle)*16, (self.spantu-360)*16)
+		painter.drawPie(rect2, (-self.start_angle)*16, (self.spantu-360)*16)
 		painter.restore()
 
 		#painter.drawEllipse(orig, 300,300)

@@ -243,14 +243,9 @@ class TodoyPage(QWidget):
 		rect=QRect(0,0,800,480)#orig,self.p2)
 
 		painter.save()
-		#painter.translate(orig)
-		#scalingx=abs(self.p2.x())/800
-		#scalingy=abs(self.p2.y())/400
-		#painter.scale(scalingx,scalingy)
+		painter.setBrush(Qt.green)
+		painter.setOpacity(self.conf.ellipse_opacity)#0.15
 		rect2=QRect(orig.x()-radi,orig.y()-radi,2*radi,2*radi)#(orig.x()-self.p2.x(),orig.y()-self.p2.y(),2*radi,2*radi)
-		#set as 200-radius!	#scaleRect!
-
-
 		if self.spantu <0:self.spantu=360+self.spantu
 		#elif self.spantu>360:self.spantu=self.spantu -360
 		#painter.drawRect(rect2)

@@ -32,6 +32,7 @@ from todoyUI import Ui_MainWindow
 from todoypage import TodoyPage
 import todoy_calsync
 from todoy_conf import todoy_config
+from todoy_settings import settings
 
 
 class Main(QMainWindow):

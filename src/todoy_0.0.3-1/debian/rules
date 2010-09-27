@@ -1,0 +1,168 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+# Sample debian/rules that uses debhelper.
+# This file was originally written by Joey Hess and Craig Small.
+# As a special exception, when this file is copied by dh-make into a
+# dh-make output file, you may use that output file without restriction.
+# This special exception was added by Craig Small in version 0.37 of dh-make.
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+CFLAGS = -Wall -g
+
+ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
+	CFLAGS += -O0
+else
+	CFLAGS += -O2
+endif
+
+configure: configure-stamp
+configure-stamp:
+	dh_testdir
+	# Add here commands to configure the package.
+
+	touch configure-stamp
+
+build: build-stamp
+
+build-stamp: configure-stamp
+	dh_testdir
+	touch build-stamp
+
+clean:
+	dh_testdir
+	dh_testroot
+	rm -f build-stamp configure-stamp
+	dh_clean
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_clean -k
+	dh_installdirs
+
+	# ======================================================
+	#$(MAKE) DESTDIR="$(CURDIR)/debian/todoy" install
+	mkdir -p "$(CURDIR)/debian/todoy"
+
+#	mkdir -p "$(CURDIR)/debian/todoy///opt/todoy/"
+	cp -a "src/opt/todoy/camera_delete.png" "$(CURDIR)/debian/todoy///opt/todoy/camera_delete.png"
+	mkdir -p "$(CURDIR)/debian/todoy///opt/todoy/"
+	cp -a "src/opt/todoy/clock_calendar_task.png" "$(CURDIR)/debian/todoy///opt/todoy/clock_calendar_task.png"
+	mkdir -p "$(CURDIR)/debian/todoy///opt/todoy/"
+	cp -a "src/opt/todoy/control_personalization.png" "$(CURDIR)/debian/todoy///opt/todoy/control_personalization.png"
+	mkdir -p "$(CURDIR)/debian/todoy///opt/todoy/"
+	cp -a "src/opt/todoy/general_undo.png" "$(CURDIR)/debian/todoy///opt/todoy/general_undo.png"
+	mkdir -p "$(CURDIR)/debian/todoy///opt/todoy/"
+	cp -a "src/opt/todoy/notes_save.png" "$(CURDIR)/debian/todoy///opt/todoy/notes_save.png"
+	mkdir -p "$(CURDIR)/debian/todoy///opt/todoy/"
+	cp -a "src/opt/todoy/sketch_freedraw.png" "$(CURDIR)/debian/todoy///opt/todoy/sketch_freedraw.png"
+	mkdir -p "$(CURDIR)/debian/todoy///opt/todoy/"
+	cp -a "src/opt/todoy/todoiUI.py" "$(CURDIR)/debian/todoy///opt/todoy/todoiUI.py"
+	mkdir -p "$(CURDIR)/debian/todoy///opt/todoy/"
+	cp -a "src/opt/todoy/todoy.ics" "$(CURDIR)/debian/todoy///opt/todoy/todoy.ics"
+	mkdir -p "$(CURDIR)/debian/todoy///opt/todoy/"
+	cp -a "src/opt/todoy/todoy.py" "$(CURDIR)/debian/todoy///opt/todoy/todoy.py"
+	mkdir -p "$(CURDIR)/debian/todoy///opt/todoy/"
+	cp -a "src/opt/todoy/todoyUI.py" "$(CURDIR)/debian/todoy///opt/todoy/todoyUI.py"
+	mkdir -p "$(CURDIR)/debian/todoy///opt/todoy/"
+	cp -a "src/opt/todoy/todoyUI.pyc" "$(CURDIR)/debian/todoy///opt/todoy/todoyUI.pyc"
+	mkdir -p "$(CURDIR)/debian/todoy///opt/todoy/"
+	cp -a "src/opt/todoy/todoyUI.pyo" "$(CURDIR)/debian/todoy///opt/todoy/todoyUI.pyo"
+	mkdir -p "$(CURDIR)/debian/todoy///opt/todoy/"
+	cp -a "src/opt/todoy/todoy_bkgrnd.png" "$(CURDIR)/debian/todoy///opt/todoy/todoy_bkgrnd.png"
+	mkdir -p "$(CURDIR)/debian/todoy///opt/todoy/"
+	cp -a "src/opt/todoy/todoy_calsync.py" "$(CURDIR)/debian/todoy///opt/todoy/todoy_calsync.py"
+	mkdir -p "$(CURDIR)/debian/todoy///opt/todoy/"
+	cp -a "src/opt/todoy/todoy_calsync.pyc" "$(CURDIR)/debian/todoy///opt/todoy/todoy_calsync.pyc"
+	mkdir -p "$(CURDIR)/debian/todoy///opt/todoy/"
+	cp -a "src/opt/todoy/todoy_calsync.pyo" "$(CURDIR)/debian/todoy///opt/todoy/todoy_calsync.pyo"
+	mkdir -p "$(CURDIR)/debian/todoy///opt/todoy/"
+	cp -a "src/opt/todoy/todoy_conf.py" "$(CURDIR)/debian/todoy///opt/todoy/todoy_conf.py"
+	mkdir -p "$(CURDIR)/debian/todoy///opt/todoy/"
+	cp -a "src/opt/todoy/todoy_conf.pyo" "$(CURDIR)/debian/todoy///opt/todoy/todoy_conf.pyo"
+	mkdir -p "$(CURDIR)/debian/todoy///opt/todoy/"
+	cp -a "src/opt/todoy/todoy_ico_48_col.png" "$(CURDIR)/debian/todoy///opt/todoy/todoy_ico_48_col.png"
+	mkdir -p "$(CURDIR)/debian/todoy///opt/todoy/"
+	cp -a "src/opt/todoy/todoy_otherfuns.py" "$(CURDIR)/debian/todoy///opt/todoy/todoy_otherfuns.py"
+	mkdir -p "$(CURDIR)/debian/todoy///opt/todoy/"
+	cp -a "src/opt/todoy/todoy_otherfuns.pyc" "$(CURDIR)/debian/todoy///opt/todoy/todoy_otherfuns.pyc"
+	mkdir -p "$(CURDIR)/debian/todoy///opt/todoy/"
+	cp -a "src/opt/todoy/todoy_otherfuns.pyo" "$(CURDIR)/debian/todoy///opt/todoy/todoy_otherfuns.pyo"
+	mkdir -p "$(CURDIR)/debian/todoy///opt/todoy/"
+	cp -a "src/opt/todoy/todoy_rc.py" "$(CURDIR)/debian/todoy///opt/todoy/todoy_rc.py"
+	mkdir -p "$(CURDIR)/debian/todoy///opt/todoy/"
+	cp -a "src/opt/todoy/todoy_rc.pyc" "$(CURDIR)/debian/todoy///opt/todoy/todoy_rc.pyc"
+	mkdir -p "$(CURDIR)/debian/todoy///opt/todoy/"
+	cp -a "src/opt/todoy/todoy_rc.pyo" "$(CURDIR)/debian/todoy///opt/todoy/todoy_rc.pyo"
+	mkdir -p "$(CURDIR)/debian/todoy///opt/todoy/"
+	cp -a "src/opt/todoy/todoy_widget.py" "$(CURDIR)/debian/todoy///opt/todoy/todoy_widget.py"
+	mkdir -p "$(CURDIR)/debian/todoy///opt/todoy/"
+	cp -a "src/opt/todoy/todoypage.py" "$(CURDIR)/debian/todoy///opt/todoy/todoypage.py"
+	mkdir -p "$(CURDIR)/debian/todoy///opt/todoy/"
+	cp -a "src/opt/todoy/todoypage.pyc" "$(CURDIR)/debian/todoy///opt/todoy/todoypage.pyc"
+	mkdir -p "$(CURDIR)/debian/todoy///opt/todoy/"
+	cp -a "src/opt/todoy/todoypage.pyo" "$(CURDIR)/debian/todoy///opt/todoy/todoypage.pyo"
+	mkdir -p "$(CURDIR)/debian/todoy///opt/todoy/"
+	cp -a "src/opt/todoy/widgets_time_editor.png" "$(CURDIR)/debian/todoy///opt/todoy/widgets_time_editor.png"
+	mkdir -p "$(CURDIR)/debian/todoy///usr/share/applications/hildon/"
+	cp -a "src/usr/share/applications/hildon/todoy.desktop" "$(CURDIR)/debian/todoy///usr/share/applications/hildon/todoy.desktop"
+	mkdir -p "$(CURDIR)/debian/todoy///usr/share/icons/hicolor/48x48/hildon/"
+	cp -a "src/usr/share/icons/hicolor/48x48/hildon/todoy_ico_48.png" "$(CURDIR)/debian/todoy///usr/share/icons/hicolor/48x48/hildon/todoy_ico_48.png"
+	mkdir -p "$(CURDIR)/debian/todoy///usr/share/icons/hicolor/48x48/hildon/"
+	cp -a "src/usr/share/icons/hicolor/48x48/hildon/todoy_ico_48_col.png" "$(CURDIR)/debian/todoy///usr/share/icons/hicolor/48x48/hildon/todoy_ico_48_col.png"
+	mkdir -p "$(CURDIR)/debian/todoy///usr/bin/"
+	cp -a "src/usr/bin/todoy" "$(CURDIR)/debian/todoy///usr/bin/todoy"
+	mkdir -p "$(CURDIR)/debian/todoy///usr/bin/"
+	cp -a "src/usr/bin/todoy_widget" "$(CURDIR)/debian/todoy///usr/bin/todoy_widget"
+	mkdir -p "$(CURDIR)/debian/todoy///opt/todoy/hildon_home_plugin_item/"
+	cp -a "src/opt/todoy/hildon_home_plugin_item/__init__.py" "$(CURDIR)/debian/todoy///opt/todoy/hildon_home_plugin_item/__init__.py"
+	mkdir -p "$(CURDIR)/debian/todoy///opt/todoy/hildon_home_plugin_item/"
+	cp -a "src/opt/todoy/hildon_home_plugin_item/__init__.pyc" "$(CURDIR)/debian/todoy///opt/todoy/hildon_home_plugin_item/__init__.pyc"
+	mkdir -p "$(CURDIR)/debian/todoy///usr/share/icons/hicolor/scalable/hildon/"
+	cp -a "src/usr/share/icons/hicolor/scalable/hildon/todoy_ico_48.png" "$(CURDIR)/debian/todoy///usr/share/icons/hicolor/scalable/hildon/todoy_ico_48.png"
+	mkdir -p "$(CURDIR)/debian/todoy///usr/share/icons/hicolor/scalable/hildon/"
+	cp -a "src/usr/share/icons/hicolor/scalable/hildon/todoy_ico_48_col.png" "$(CURDIR)/debian/todoy///usr/share/icons/hicolor/scalable/hildon/todoy_ico_48_col.png"
+	mkdir -p "$(CURDIR)/debian/todoy///usr/share/dbus-1/services/"
+	cp -a "src/usr/share/dbus-1/services/todoy.service" "$(CURDIR)/debian/todoy///usr/share/dbus-1/services/todoy.service"
+
+	# ======================================================
+
+# Build architecture-independent files here.
+binary-indep: build install
+# We have nothing to do by default.
+
+# Build architecture-dependent files here.
+binary-arch: build install
+	dh_testdir
+	dh_testroot
+	dh_installchangelogs debian/changelog
+	dh_installdocs
+	dh_installexamples
+#	dh_install
+#	dh_installmenu
+#	dh_installdebconf
+#	dh_installlogrotate
+#	dh_installemacsen
+#	dh_installpam
+#	dh_installmime
+#	dh_python
+#	dh_installinit
+#	dh_installcron
+#	dh_installinfo
+	dh_installman
+	dh_link
+	dh_strip
+	dh_compress
+	dh_fixperms
+#	dh_perl
+#	dh_makeshlibs
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install configure

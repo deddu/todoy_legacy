@@ -92,7 +92,7 @@ class TodoyPage(QWidget):
         p.setFont(QFont("Arial", 15))
         p.drawText(20,50, self.date)
 	infos=("Q: Quit, C: Clear, B: Blue, R: Red, G: Green, K: Black, Z: Undo.")
-	if self.inputmode=="sketch":p.drawText(20,90, infos)
+	p.drawText(20,90, infos)
 	pen=self.pen#QPen()
 	self.draftPen=QPen()
 	#color = QColor(Qt.black)
@@ -225,21 +225,19 @@ class TodoyPage(QWidget):
 		painter.drawText(pm, self.text)
 		painter.setFont(QFont("Arial", 8))
 		radi=self.getRadi()
-		if radi<self.conf.g_rad_inner:
-			self.angles_time(self.conf.g_scale_inner)
-			if self.showcircles:
+		if radi<self.conf.g_rad_inner and self.showcircles:
+				self.angles_time(self.conf.g_scale_inner)
 				painter.setBrush(Qt.yellow)
 				painter.setOpacity(self.conf.ellipse_opacity)
 				#painter.setBrush(Qt.CrossPattern)
 				painter.drawEllipse(orig, self.conf.g_rad_inner,self.conf.g_rad_inner)
 				#painter.fillPath(a,Qt.cyan)
-		elif radi>=self.conf.g_rad_inner and radi <self.conf.g_rad_middle:
-			if self.showcircles:
+		elif radi>=self.conf.g_rad_inner and radi <self.conf.g_rad_middle and self.showcircles:
 				painter.setBrush(Qt.cyan)
 				painter.setOpacity(self.conf.ellipse_opacity)#0.15
 				#painter.setBrush(Qt.Dense7Pattern)
 				painter.drawEllipse(orig, self.conf.g_rad_middle,self.conf.g_rad_middle)			
-			self.angles_time(self.conf.g_scale_middle)
+				self.angles_time(self.conf.g_scale_middle)
 		else:
 				self.angles_time(self.conf.g_scale_outer)
 		rect=QRect(0,0,800,480)#orig,self.p2)

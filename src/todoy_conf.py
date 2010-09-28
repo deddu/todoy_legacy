@@ -35,7 +35,7 @@ class todoy_config():
 	self.cal_sync= True
 	self.default_mode = "auto"
 	self.cal_file="todoy.ics"
-	self.default_ev="event"
+	self.default_ev="EVENT"
 
 ################### granulometry #####################
 	self.g_rad_inner=100
@@ -45,7 +45,7 @@ class todoy_config():
 	self.g_scale_outer=1
 
 ################### sketch mode ######################
-	self.defaultpen="default"
+	self.defaultpen_size=4
 	self.ellipse_opacity=0.15
 	self.font="arial"
 	self.bkgrnd="todoy_bkgrnd.png"

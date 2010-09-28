@@ -1,10 +1,29 @@
-todo:
-- add auto creation of slabs: arc + textfield (permanent mode??)
+MAEMO5: todo:
+- eyecandy/trim GUI
 - widget optimization: size/centering
-- image existence check
 - auto load if exist, else new. Idem 4 widget.
 - click on widget should open main app
-- zoom out feat
+- widget auto-update
+- more undo levels
+- vect to possibly remove one at time
+- sync w/calendar: via pycalai
+	-ics are ok, but time is referred to GMT.. 
+	-those damn timezones!
+- possible alarms
 - create install/readme etc
-- app menu
--ui on maemo is too crowded. resize elements.
+- app menu:
+	-settings: fonts, theme, default mode
+	-settings: calendar integration on/off
+	-about: 
+- package, and repos
+- ui on maemo is too crowded. resize elements. 
+
+
+ANDROID VERSION:
+everything?
+sdk
+IPHONE:
+ahaha
+sdk
+WEBSITE:
+-create project page: GITORIUS & GARAGE

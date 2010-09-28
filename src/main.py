@@ -32,7 +32,7 @@ from todoyUI import Ui_MainWindow
 from todoypage import TodoyPage
 import todoy_calsync
 from todoy_conf import todoy_config
-#from todoy_settings import settings
+from todoy_settings import Settings
 
 
 class Main(QMainWindow):
@@ -67,12 +67,19 @@ class Main(QMainWindow):
 	 QObject.connect(self.ui.toolButton_save, SIGNAL("pressed()"), 	self.todoypage.save)
 	 QObject.connect(self.ui.toolButton_save, SIGNAL("pressed()"), 	self.cal.parse_events)#save
 #	 QObject.connect(self.ui.toolButton_3, SIGNAL("pressed()"), self.setmode0)
+	 #self.ui.menuSettings=QAction(self.tr('Configure'), self)
+	 #self.ui.menuSettings.triggered.connect(self.on_actionSettings_triggered)
+	 #self.ui.menubar.triggered.connect(self.on_actionSettings_triggered)
+
+
 	 try:
             self.setAttribute(Qt.WA_Maemo5StackedWindow)
             USE_MAEMO = True
          except:
             USE_MAEMO = False
-
+   
+   def on_actionSettings_triggered(self):
+	self.settings=Settings(self)
 
    def setmode0(self):
         self.ui.stackedWidget.setCurrentIndex(0)

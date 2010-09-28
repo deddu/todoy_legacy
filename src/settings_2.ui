@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>3</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QWidget" name="formLayoutWidget">
@@ -113,17 +113,24 @@
       <item row="6" column="1">
        <widget class="QFontComboBox" name="fontComboBox"/>
       </item>
+      <item row="7" column="0">
+       <widget class="QLabel" name="defaultpiecolorLabel">
+        <property name="text">
+         <string>defaultpiecolor</string>
+        </property>
+       </widget>
+      </item>
      </layout>
     </widget>
    </widget>
    <widget class="QWidget" name="page_2">
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>11</x>
        <y>11</y>
        <width>771</width>
-       <height>261</height>
+       <height>321</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
@@ -140,9 +147,6 @@
              <string>granulometry:</string>
             </property>
            </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QDial" name="dial"/>
           </item>
           <item row="1" column="1">
            <layout class="QFormLayout" name="formLayout_6">
@@ -188,9 +192,6 @@
              <string>granulometry radii 1:</string>
             </property>
            </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QDial" name="dial_2"/>
           </item>
           <item row="1" column="1">
            <layout class="QFormLayout" name="formLayout_7">
@@ -249,7 +250,7 @@ p, li { white-space: pre-wrap; }
     </widget>
    </widget>
    <widget class="QWidget" name="page_4">
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>30</x>
@@ -278,9 +279,6 @@ p, li { white-space: pre-wrap; }
           </property>
          </widget>
         </item>
-        <item row="2" column="0">
-         <widget class="QDial" name="dial_3"/>
-        </item>
         <item row="2" column="1">
          <layout class="QFormLayout" name="formLayout_9">
           <property name="fieldGrowthPolicy">
@@ -304,7 +302,7 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item row="1" column="1">
-           <widget class="QSpinBox" name="spinBox_15"/>
+           <widget class="QDoubleSpinBox" name="doubleSpinBox_15"/>
           </item>
          </layout>
         </item>
@@ -341,8 +339,8 @@ p, li { white-space: pre-wrap; }
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>355</y>
-     <width>591</width>
+     <y>340</y>
+     <width>712</width>
      <height>41</height>
     </rect>
    </property>

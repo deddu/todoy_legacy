@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'another_4.ui'
 #
-# Created: Tue Sep 28 16:39:33 2010
+# Created: Tue Sep 28 19:29:31 2010
 #      by: PyQt4 UI code generator 4.7.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -127,8 +127,17 @@ class Ui_MainWindow(object):
         self.actionSettings.setObjectName("actionSettings")
         self.actionAbout = QtGui.QAction(MainWindow)
         self.actionAbout.setObjectName("actionAbout")
+        self.actionSave = QtGui.QAction(MainWindow)
+        self.actionSave.setObjectName("actionSave")
+        self.actionLoad = QtGui.QAction(MainWindow)
+        self.actionLoad.setObjectName("actionLoad")
+        self.actionQuit = QtGui.QAction(MainWindow)
+        self.actionQuit.setObjectName("actionQuit")
         self.menuSettings.addAction(self.actionSettings)
+        self.menuSettings.addAction(self.actionSave)
+        self.menuSettings.addAction(self.actionLoad)
         self.menuSettings.addAction(self.actionAbout)
+        self.menuSettings.addAction(self.actionQuit)
         self.menubar.addAction(self.menuSettings.menuAction())
 
         self.retranslateUi(MainWindow)
@@ -144,8 +153,11 @@ class Ui_MainWindow(object):
         self.toolButton_save.setText(QtGui.QApplication.translate("MainWindow", "...", None, QtGui.QApplication.UnicodeUTF8))
         self.toolButton_3.setText(QtGui.QApplication.translate("MainWindow", "...", None, QtGui.QApplication.UnicodeUTF8))
         self.menuSettings.setTitle(QtGui.QApplication.translate("MainWindow", "&Zettings", None, QtGui.QApplication.UnicodeUTF8))
-        self.actionSettings.setText(QtGui.QApplication.translate("MainWindow", "&pettings", None, QtGui.QApplication.UnicodeUTF8))
-        self.actionAbout.setText(QtGui.QApplication.translate("MainWindow", "&iabout", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionSettings.setText(QtGui.QApplication.translate("MainWindow", "&preferences", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionAbout.setText(QtGui.QApplication.translate("MainWindow", "&about", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionSave.setText(QtGui.QApplication.translate("MainWindow", "&save", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionLoad.setText(QtGui.QApplication.translate("MainWindow", "&load", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionQuit.setText(QtGui.QApplication.translate("MainWindow", "quit", None, QtGui.QApplication.UnicodeUTF8))
 
 import todoy_rc
 

@@ -35,8 +35,8 @@ class cal_handling():
 
 	if not os.path.exists(self.filename):
 		self.cal_create()
-		print False
-	else: print True
+		#print False
+	#else: print True
 	self.summary="yay!"
 	self.date=20100921
 	self.start=1130

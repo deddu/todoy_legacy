@@ -29,6 +29,7 @@ from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 from settingsUI2 import Ui_Form
 from todoy_conf import todoy_config
+import cPickle,os
 
 
 class Settings(QWidget):
@@ -36,7 +37,17 @@ class Settings(QWidget):
          QWidget.__init__(self)
          self.ui=Ui_Form()#QWidget() 
          self.ui.setupUi(self)
-	 self.tempconf=todoy_config()
+	 self.parent=parent
+	 #self.tempconf=todoy_config()
+	 conffile="todoy.conf"#"/home/user/.todoy/todoy.conf"
+	 if not os.path.exists(conffile):
+	 	self.tempconf=todoy_config()
+	 else: self.tempconf=self.parent.conf
+	#	conf=open(conffile, 'r+b')
+	#	self.tempconf=cPickle.load(conf)
+
+
+
  #nav bar buttons
 	 QObject.connect(self.ui.commandLinkButton_7, SIGNAL("pressed()"), self.showpage_auto)
 	 QObject.connect(self.ui.commandLinkButton_15, SIGNAL("pressed()"), self.showpage_gran)
@@ -76,12 +87,24 @@ class Settings(QWidget):
 	 self.ui.doubleSpinBox_15.setSingleStep(0.01)
 	 self.ui.doubleSpinBox_15.setValue(self.tempconf.ellipse_opacity)
 	 self.ui.doubleSpinBox_15.valueChanged.connect(self.setopacity)
-	 self.show()
+	 #self.show()
+
+
 
 
 #main
    def confirm(self):
-	print "ok"
+	#import cPickle
+	#configfile=self.tempconf.user_path + "todoy.conf"
+	#configuz=open(configfile,"w+b")
+	#cPickle.dump(self.tempconf,configuz)
+	print "settings saved"
+	self.parent.conf=self.tempconf
+	self.hide()
+	#self.loadsettings()
+	#Settings.close(self)
+
+
    def showpage_auto(self):
         self.ui.stackedWidget.setCurrentIndex(0)
    def showpage_gran(self):
@@ -115,7 +138,7 @@ class Settings(QWidget):
 	self.tempconf.cal_file=str(text)
 	print text
    def setdeffont(self,font):
-	self.tempconf.font=font
+	self.tempconf.font=font###doesn't work.. 
 	print "font changed"
 # page 2 ##############################################################
    def setgran_in(self, value):

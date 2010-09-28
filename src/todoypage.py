@@ -89,7 +89,7 @@ class TodoyPage(QWidget):
    def paintEvent(self, ev):
         p = QPainter(self)
 	#today=strftime("%a, %d %b %Y",gmtime())
-        p.setFont(QFont("Arial", 15))
+        p.setFont(self.conf.font)#QFont("Arial", 15))
         p.drawText(20,50, self.date)
 	infos=("Q: Quit, C: Clear, B: Blue, R: Red, G: Green, K: Black, Z: Undo.")
 	if self.inputmode=="sketch":p.drawText(20,90, infos)
@@ -222,8 +222,9 @@ class TodoyPage(QWidget):
 		#painter.drawLine(self.p1,self.p2)
 
 
+
+		painter.setFont(self.conf.font)#QFont("Arial", 8))
 		painter.drawText(pm, self.text)
-		painter.setFont(QFont("Arial", 8))
 		radi=self.getRadi()
 		if radi<self.conf.g_rad_inner:
 			self.angles_time(self.conf.g_scale_inner)

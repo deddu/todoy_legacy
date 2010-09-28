@@ -26,6 +26,7 @@
 ################### main conf ########################
 class todoy_config():
     def __init__(self):
+	from PyQt4 import QtCore, QtGui
 	import os
 
 	self.user_path=""#"/home/user/.todoy"
@@ -47,6 +48,6 @@ class todoy_config():
 ################### sketch mode ######################
 	self.defaultpen_size=4
 	self.ellipse_opacity=0.15
-	self.font="arial"
+	self.font=QtGui.QFont("Arial", 15)
 	self.bkgrnd="todoy_bkgrnd.png"
 

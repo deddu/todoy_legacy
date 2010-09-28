@@ -38,9 +38,14 @@ from todoy_settings import Settings
 class Main(QMainWindow):
    def __init__(self):
          QMainWindow.__init__(self)
+	 import os, cPickle
          self.ui=Ui_MainWindow()#QWidget() 
          self.ui.setupUi(self)
-	 self.conf=todoy_config()
+	 self.loadsettings()
+	 self.settings=Settings(self)
+	 self.settings.hide()
+	 
+
  	 self.cal=todoy_calsync.cal_handling(self.conf)
 	 self.todoypage=TodoyPage(self,self.conf)
 	 eee=strftime("%Y%m%d",gmtime())
@@ -49,6 +54,7 @@ class Main(QMainWindow):
 	 self.ui.dateEdit.setDisplayFormat("yyyy.MM.dd")
 	 self.ui.dateEdit_2.setDate(today)
 	 self.ui.dateEdit_2.setDisplayFormat("yyyy.MM.dd")
+
 	 if 	self.conf.default_mode =="auto":
 		self.setmode1()
 	 else: self.setmode0()
@@ -68,8 +74,8 @@ class Main(QMainWindow):
 	 QObject.connect(self.ui.toolButton_save, SIGNAL("pressed()"), 	self.cal.parse_events)#save
 #	 QObject.connect(self.ui.toolButton_3, SIGNAL("pressed()"), self.setmode0)
 	 #self.ui.menuSettings=QAction(self.tr('Configure'), self)
-	 #self.ui.menuSettings.triggered.connect(self.on_actionSettings_triggered)
-	 #self.ui.menubar.triggered.connect(self.on_actionSettings_triggered)
+
+
 
 
 	 try:
@@ -78,8 +84,36 @@ class Main(QMainWindow):
          except:
             USE_MAEMO = False
    
+   #def hideEvent(self,event):
+	#print "clos"
+	#self.loadsettings()
+
+
+   def loadsettings(self):
+	 #import os, cPickle
+	 #conffile="todoy.conf"#"/home/user/.todoy/todoy.conf"
+	 #if not os.path.exists(conffile):
+	 self.conf=todoy_config()
+	 #else: 
+		#conf=open(conffile, 'r+b')
+		#self.conf=cPickle.load(conf)
+
    def on_actionSettings_triggered(self):
-	self.settings=Settings(self)
+	#self.settings=Settings(self)
+	self.settings.show()
+	#self.loadsettings()   def on	 
+	#self.settings.close.connect(self.loadsettings)
+
+	
+   def on_actionSave_triggered(self):
+	self.todoypage.save()
+	self.cal.parse_events()
+   def on_actionLoad_triggered(self):
+	self.todoypage.load()
+   def on_actionAbout_triggered(self):
+	pass
+   def on_actionQuit_triggered(self):
+	QApplication.exit(0)
 
    def setmode0(self):
         self.ui.stackedWidget.setCurrentIndex(0)

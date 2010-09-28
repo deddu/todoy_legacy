@@ -228,21 +228,39 @@
    </property>
    <widget class="QMenu" name="menuSettings">
     <property name="title">
-     <string>settings</string>
+     <string>&amp;Zettings</string>
     </property>
     <addaction name="actionSettings"/>
+    <addaction name="actionSave"/>
+    <addaction name="actionLoad"/>
     <addaction name="actionAbout"/>
+    <addaction name="actionQuit"/>
    </widget>
    <addaction name="menuSettings"/>
   </widget>
   <action name="actionSettings">
    <property name="text">
-    <string>settings</string>
+    <string>&amp;preferences</string>
    </property>
   </action>
   <action name="actionAbout">
    <property name="text">
-    <string>about</string>
+    <string>&amp;about</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="text">
+    <string>&amp;save</string>
+   </property>
+  </action>
+  <action name="actionLoad">
+   <property name="text">
+    <string>&amp;load</string>
+   </property>
+  </action>
+  <action name="actionQuit">
+   <property name="text">
+    <string>quit</string>
    </property>
   </action>
  </widget>

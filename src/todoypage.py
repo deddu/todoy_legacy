@@ -34,18 +34,19 @@ class TodoyPage(QWidget):
    def __init__(self,parent,conf):
 	 QWidget.__init__(self,parent)
 	 self.mousepressed=False
-	 self.conf=conf
-	 self.inputmode= "auto"#"sketch"#or auto
+	 #self#.conf=conf
+	 self.parent=parent
+	 self.inputmode= self.parent.conf.default_mode#"auto"#"sketch"#or auto
 	 self.pixmap=QPixmap()
 	 self.undoPixmap=QPixmap()
 	 self.image = QImage()
-	 self.defpath=self.conf.user_path#"/home/user/.todoy/"
+	 self.defpath=self.parent.conf.user_path#"/home/user/.todoy/"
 	 self.text=""
          #self.lastPoint = QPoint()
 	 self.setWindowTitle("Todoy")
          self.resize(800,350)
-	 self.openImage(self.conf.bkgrnd)
-	 self.openPixmap(self.conf.bkgrnd)
+	 self.openImage(self.parent.conf.bkgrnd)
+	 self.openPixmap(self.parent.conf.bkgrnd)
 	 self.pen=QPen(Qt.black, 4, Qt.SolidLine)
 	 self.p1 = QPoint(-1, -1)
 	 self.p2 = QPoint(-1, -1)
@@ -89,7 +90,7 @@ class TodoyPage(QWidget):
    def paintEvent(self, ev):
         p = QPainter(self)
 	#today=strftime("%a, %d %b %Y",gmtime())
-        p.setFont(self.conf.font)#QFont("Arial", 15))
+        p.setFont(self.parent.conf.font)#QFont("Arial", 15))
         p.drawText(20,50, self.date)
 	infos=("Q: Quit, C: Clear, B: Blue, R: Red, G: Green, K: Black, Z: Undo.")
 	if self.inputmode=="sketch":p.drawText(20,90, infos)
@@ -223,31 +224,32 @@ class TodoyPage(QWidget):
 
 
 
-		painter.setFont(self.conf.font)#QFont("Arial", 8))
+		painter.setFont(self.parent.conf.font)#QFont("Arial", 8))
+		#print self.parent.conf.font##############################################################debugline
 		painter.drawText(pm, self.text)
 		radi=self.getRadi()
-		if radi<self.conf.g_rad_inner:
-			self.angles_time(self.conf.g_scale_inner)
+		if radi<self.parent.conf.g_rad_inner:
+			self.angles_time(self.parent.conf.g_scale_inner)
 			if self.showcircles:
 				painter.setBrush(Qt.yellow)
-				painter.setOpacity(self.conf.ellipse_opacity)
+				painter.setOpacity(self.parent.conf.ellipse_opacity)
 				#painter.setBrush(Qt.CrossPattern)
-				painter.drawEllipse(orig, self.conf.g_rad_inner,self.conf.g_rad_inner)
+				painter.drawEllipse(orig, self.parent.conf.g_rad_inner,self.parent.conf.g_rad_inner)
 				#painter.fillPath(a,Qt.cyan)
-		elif radi>=self.conf.g_rad_inner and radi <self.conf.g_rad_middle:
+		elif radi>=self.parent.conf.g_rad_inner and radi <self.parent.conf.g_rad_middle:
 			if self.showcircles:
 				painter.setBrush(Qt.cyan)
-				painter.setOpacity(self.conf.ellipse_opacity)#0.15
+				painter.setOpacity(self.parent.conf.ellipse_opacity)#0.15
 				#painter.setBrush(Qt.Dense7Pattern)
-				painter.drawEllipse(orig, self.conf.g_rad_middle,self.conf.g_rad_middle)			
-			self.angles_time(self.conf.g_scale_middle)
+				painter.drawEllipse(orig, self.parent.conf.g_rad_middle,self.parent.conf.g_rad_middle)			
+			self.angles_time(self.parent.conf.g_scale_middle)
 		else:
-				self.angles_time(self.conf.g_scale_outer)
+				self.angles_time(self.parent.conf.g_scale_outer)
 		rect=QRect(0,0,800,480)#orig,self.p2)
 
 		painter.save()
 		painter.setBrush(Qt.green)
-		painter.setOpacity(self.conf.ellipse_opacity)#0.15
+		painter.setOpacity(self.parent.conf.ellipse_opacity)#0.15
 		rect2=QRect(orig.x()-radi,orig.y()-radi,2*radi,2*radi)#(orig.x()-self.p2.x(),orig.y()-self.p2.y(),2*radi,2*radi)
 		if self.spantu <0:self.spantu=360+self.spantu
 		#elif self.spantu>360:self.spantu=self.spantu -360

@@ -1,0 +1,17 @@
+Maintainer: Andrea Cadeddu <mrernia@gmail.com>
+Format: 1.7
+Source: todoy
+Version: 0.0.4-1
+Architecture: all
+Date: Tue, 28 Sep 2010 19:23:06 +0000
+Distribution: fremantle
+Urgency: low
+Description: 
+ A fast revolutionary way to handle your duty and your appointments. With desktop widget and calendar export
+Changes: 
+ stairway to settings
+Changed-By: Andrea Cadeddu <mrernia@gmail.com>
+Files:
+ f402b78d889442c086a7e557391ef9ac 117663 user/office extras-devel todoy_0.0.4-1.tar.gz
+ 6c4440e24346626d838a3b4afa4366c7 282 user/office extras-devel todoy_0.0.4-1.dsc
+

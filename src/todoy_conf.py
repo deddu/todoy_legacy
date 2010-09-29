@@ -29,7 +29,7 @@ class todoy_config():
 	from PyQt4 import QtCore, QtGui
 	import os
 
-	self.user_path=""#"/home/user/.todoy"
+	self.user_path=""#"/home/user/.todoy/"
 	self.install_path="/opt/todoy/"
 
 ################### auto mode ########################

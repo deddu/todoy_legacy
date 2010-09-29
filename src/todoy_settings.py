@@ -46,6 +46,12 @@ class Settings(QWidget):
 	#	conf=open(conffile, 'r+b')
 	#	self.tempconf=cPickle.load(conf)
 
+	 try:
+            self.setAttribute(Qt.WA_Maemo5StackedWindow)
+	    from PyQt4.QtMaemo5 import QMaemo5InformationBox
+         except:
+            pass
+
 
 
  #nav bar buttons
@@ -59,7 +65,7 @@ class Settings(QWidget):
 	 self.ui.checkBox_2.pressed.connect(self.setcalsyncmode)
 	 self.ui.comboBox.currentIndexChanged.connect(self.setdefevent)
 	 self.ui.fontComboBox.currentFontChanged.connect(self.setdeffont)
-	 self.ui.lineEdit.textChanged.connect(self.setcalfile)
+	 #self.ui.lineEdit.textChanged.connect(self.setcalfile)
  #page2 gran
 	 self.ui.spinBox_9.setRange(1,60)
 	 self.ui.spinBox_9.setValue(self.tempconf.g_scale_inner)
@@ -117,10 +123,13 @@ class Settings(QWidget):
    def setdefmode(self):
 	if self.ui.checkBox.checkState()==0:
 		self.tempconf.default_mode="auto"
-		print "default automode"
+		try:QMaemo5InformationBox.information(None, "automode set")
+		except:print "default automode"
+
 	else: 
 		self.tempconf.default_mode="sketch"
-		print "default sketchmode"
+		try:QMaemo5InformationBox.information(None, "sketchmode set")
+		except: print "default sketchmode"
    def setcalsyncmode(self):
 	if self.ui.checkBox_2.checkState()==0:
 		self.tempconf.calsync=True

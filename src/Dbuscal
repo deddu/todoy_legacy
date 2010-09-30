@@ -1,0 +1,7 @@
+method call sender=:1.301 -> dest=com.nokia.calendar serial=17 path=/com/nokia/calendar; interface=com.nokia.calendar; member=mime_open
+   string "file:///home/user/MyDocs/todoy.ics"
+
+
+
+dbus-send --type=method_call --dest=com.nokia.calendar /com/nokia/calendar com.nokia.calendar.mime_open string:"file:///home/user/.todoy/.todoy"
+

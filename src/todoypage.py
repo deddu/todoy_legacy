@@ -215,7 +215,7 @@ class TodoyPage(QWidget):
    def paintAuto(self, painter):
 	from math import atan, degrees
     	if (self.p2.x() != -1): 
-		orig=QPoint(400,240)
+		orig=QPoint(400,175)
 		self.orig=orig
 		pm=QPoint((self.p1.x()+self.p2.x())/2,(self.p1.y()+self.p2.y())/2)
 		#painter.drawLine(orig, self.p1)
@@ -245,7 +245,7 @@ class TodoyPage(QWidget):
 			self.angles_time(self.parent.conf.g_scale_middle)
 		else:
 				self.angles_time(self.parent.conf.g_scale_outer)
-		rect=QRect(0,0,800,480)#orig,self.p2)
+		rect=QRect(0,0,800,350)#orig,self.p2)
 
 		painter.save()
 		painter.setBrush(Qt.green)

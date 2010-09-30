@@ -97,6 +97,13 @@ class Main(QMainWindow):
 	 #else: 
 		#conf=open(conffile, 'r+b')
 		#self.conf=cPickle.load(conf)
+   def on_actionSync_triggered(self):
+	import os
+	self.cal.parse_events()
+	try:
+	    os.system('dbus-send --type=method_call --dest=com.nokia.calendar /com/nokia/calendar com.nokia.calendar.mime_open string:"file:///home/user/.todoy/.todoy"')
+	except: print "you should be using me on maemo5"
+
 
    def on_actionSettings_triggered(self):
 	#self.settings=Settings(self)

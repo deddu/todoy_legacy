@@ -1,0 +1,4 @@
+#!/bin/sh
+    chmod +x /opt/todoy/todoy.py
+    mkdir -p /home/user/.todoy
+    chown -R user /home/user/.todoy

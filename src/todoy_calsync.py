@@ -60,6 +60,7 @@ class cal_handling():
 	
 	f=open(self.filename,'a+b')
 	for item in self.eventlist:
+		if self.eventlist.count(item)>=2: self.eventlist.remove(item)
 		date=item[0]
 		start=item[1]
 		end=item[2]
@@ -75,9 +76,10 @@ class cal_handling():
 		f.write(summary)#(Your Proposal Review')
 		f.write('\nDESCRIPTION:Created with todoy!')
 		f.write('\nCLASS:PRIVATE')
-		f.write('\nEND:VEVENT')
-	f.write('\nEND:VCALENDAR')
+		f.write('\nEND:VEVENT\n')
+	f.write('END:VCALENDAR')
 	f.close()
+	self.eventlist=[]
 
    def gen_time_string(self,date,time):
 	timestring=str(date) + "T" + str(time) + "00Z"

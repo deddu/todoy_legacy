@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>2</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QWidget" name="formLayoutWidget">
@@ -50,20 +50,6 @@
        <widget class="QCheckBox" name="checkBox">
         <property name="text">
          <string>start with auto mode</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0">
-       <widget class="QCheckBox" name="checkBox_2">
-        <property name="text">
-         <string>sync with calendar</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="1">
-       <widget class="QLabel" name="label_7">
-        <property name="text">
-         <string>(requires auto mode)</string>
         </property>
        </widget>
       </item>
@@ -103,6 +89,20 @@
       <item row="5" column="1">
        <widget class="QFontComboBox" name="fontComboBox"/>
       </item>
+      <item row="3" column="1">
+       <widget class="QLabel" name="label_7">
+        <property name="text">
+         <string>(requires auto mode)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QCheckBox" name="checkBox_2">
+        <property name="text">
+         <string>sync with calendar</string>
+        </property>
+       </widget>
+      </item>
      </layout>
     </widget>
    </widget>
@@ -126,7 +126,7 @@ p, li { white-space: pre-wrap; }
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;defaults are: 100, 200&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>14</x>
@@ -235,48 +235,44 @@ p, li { white-space: pre-wrap; }
          </widget>
         </item>
         <item row="1" column="0">
-         <widget class="QLabel" name="label_6">
+         <widget class="QLabel" name="label_17">
           <property name="text">
-           <string>pen preferences</string>
+           <string>pen size</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QSpinBox" name="spinBox_14"/>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_18">
+          <property name="text">
+           <string>pie opacity</string>
           </property>
          </widget>
         </item>
         <item row="2" column="1">
-         <layout class="QFormLayout" name="formLayout_9">
-          <property name="fieldGrowthPolicy">
-           <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
-          </property>
-          <item row="0" column="0">
-           <widget class="QLabel" name="label_17">
-            <property name="text">
-             <string>size</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QSpinBox" name="spinBox_14"/>
-          </item>
-          <item row="1" column="0">
-           <widget class="QLabel" name="label_18">
-            <property name="text">
-             <string>opacity</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="1">
-           <widget class="QDoubleSpinBox" name="doubleSpinBox_15"/>
-          </item>
-         </layout>
+         <widget class="QDoubleSpinBox" name="doubleSpinBox_15"/>
         </item>
         <item row="3" column="0">
+         <widget class="QLabel" name="piecolorLabel">
+          <property name="text">
+           <string>piecolor</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QLineEdit" name="piecolorLineEdit"/>
+        </item>
+        <item row="4" column="1">
+         <widget class="QLineEdit" name="backgroundTemplateLineEdit"/>
+        </item>
+        <item row="4" column="0">
          <widget class="QLabel" name="backgroundTemplateLabel">
           <property name="text">
            <string>background template</string>
           </property>
          </widget>
-        </item>
-        <item row="3" column="1">
-         <widget class="QLineEdit" name="backgroundTemplateLineEdit"/>
         </item>
        </layout>
       </item>

@@ -86,6 +86,8 @@ class cal_handling():
 	return timestring
 	pass
 
+   def cal_clear(self):
+	self.cal_create()
 
    def cal_create(self):
 	f=open(self.filename,'w+b')

@@ -22,19 +22,29 @@
 #THE SOFTWARE.
 ###
 
-from hildon_home_plugin_item import HildonHomePluginItem
+##from hildon_home_plugin_item import HildonHomePluginItem
 import gtk
+import pygtk
 import time
 
-class MyWidget(HildonHomePluginItem):
+class MyWidget():#HildonHomePluginItem):
     def __init__(self):
-        HildonHomePluginItem.__init__(self, header=time.strftime("%a, %d %b %y",time.gmtime()), corner_radius=7)
-        self.set_size_request(400, 250)
+	self.window = gtk.Window(gtk.WINDOW_TOPLEVEL)
+        #HildonHomePluginItem.__init__(self, header=time.strftime("%a, %d %b %y",time.gmtime()), corner_radius=7)
+        #self.set_size_request(400, 250)
         #body = gtk.Label("This is the body\nline2\nline3")
-        #self.add(body)
-        self.show_all()
+        #self.window.add(body)
+        #self.window.show_all()
+	event_box = gtk.EventBox()
+        self.window.add(event_box)
+#        event_box.show()
+	event_box.set_events(gtk.gdk.BUTTON_PRESS_MASK)
+	event_box.connect("button_press_event", self.myfun,3)#lambda w,e: gtk.main_quit())
+
+
+
         today=time.strftime("%Y%m%d",time.gmtime())+".png"
-        fname='/home/user/.todoy/'+today
+        fname=''+today
         pb = gtk.gdk.pixbuf_new_from_file(fname) #was pixbug
 	i = gtk.Image()
 	height=(800*2)/3
@@ -44,20 +54,25 @@ class MyWidget(HildonHomePluginItem):
         #s.set_size_request(200,200)
         i.set_from_pixbuf(scaled_buf)
         i.show_all()
-        self.add(i)
+        event_box.add(i)
+	event_box.show()
+	self.window.show()
 #	self.button = gtk.Button("Hello World")
-#	self.button.connect_object("clicked", print("ay"), self.window)
+	
 
-def myfun(num):
+	#self..connect_object("clicked", self.myfun, "ay")
+	
+    def myfun(self,arg1,arg2,num):
 	print num
 
 
-hd_plugin_type = MyWidget
+#hd_plugin_type = MyWidget
 
 if __name__ == '__main__':
     import gobject
-    gobject.type_register(hd_plugin_type)
-    obj = gobject.new(hd_plugin_type, plugin_id="plugin_id")
-    obj.show()
-    obj.connect_object("clicked", myfyun, 3)	
+#    gobject.type_register(hd_plugin_type)
+#    obj = gobject.new(hd_plugin_type, plugin_id="plugin_id")
+    obj=MyWidget() #remove
+    obj.window.show()
+    #obj.window.connect_object("clicked", myfun, 3)	
     gtk.main()

@@ -1,0 +1,119 @@
+signal sender=org.freedesktop.DBus -> dest=:1.145 serial=2 path=/org/freedesktop/DBus; interface=org.freedesktop.DBus; member=NameAcquired
+   string ":1.145"
+method call sender=:1.145 -> dest=org.freedesktop.DBus serial=3 path=/org/freedesktop/DBus; interface=org.freedesktop.DBus; member=AddMatch
+   string "type='method_call'"
+method call sender=:1.145 -> dest=org.freedesktop.DBus serial=4 path=/org/freedesktop/DBus; interface=org.freedesktop.DBus; member=AddMatch
+   string "type='method_return'"
+method call sender=:1.145 -> dest=org.freedesktop.DBus serial=5 path=/org/freedesktop/DBus; interface=org.freedesktop.DBus; member=AddMatch
+   string "type='error'"
+signal sender=org.freedesktop.DBus -> dest=(null destination) serial=29 path=/org/freedesktop/DBus; interface=org.freedesktop.DBus; member=NameOwnerChanged
+   string ":1.146"
+   string ""
+   string ":1.146"
+method call sender=:1.146 -> dest=org.freedesktop.DBus serial=1 path=/org/freedesktop/DBus; interface=org.freedesktop.DBus; member=Hello
+method call sender=:1.146 -> dest=org.gtk.vfs.Daemon serial=2 path=/org/gtk/vfs/mounttracker; interface=org.gtk.vfs.MountTracker; member=listMountableInfo
+method return sender=:1.9 -> dest=:1.146 reply_serial=2
+   array [
+      struct {
+         string "sftp"
+         string "sftp"
+         array [
+            string "ssh"
+         ]
+         int32 22
+         boolean true
+      }
+      struct {
+         string "http"
+         string "http"
+         array [
+         ]
+         int32 0
+         boolean false
+      }
+      struct {
+         string "trash"
+         string "trash"
+         array [
+         ]
+         int32 0
+         boolean false
+      }
+      struct {
+         string "obex"
+         string "obex"
+         array [
+         ]
+         int32 0
+         boolean false
+      }
+      struct {
+         string "computer"
+         string "computer"
+         array [
+         ]
+         int32 0
+         boolean false
+      }
+      struct {
+         string "network"
+         string "network"
+         array [
+         ]
+         int32 0
+         boolean false
+      }
+      struct {
+         string "dav"
+         string "dav"
+         array [
+         ]
+         int32 0
+         boolean false
+      }
+      struct {
+         string "localtest"
+         string "localtest"
+         array [
+         ]
+         int32 0
+         boolean false
+      }
+      struct {
+         string "ftp"
+         string "ftp"
+         array [
+         ]
+         int32 21
+         boolean true
+      }
+      struct {
+         string "burn"
+         string "burn"
+         array [
+         ]
+         int32 0
+         boolean false
+      }
+   ]
+signal sender=org.freedesktop.DBus -> dest=(null destination) serial=30 path=/org/freedesktop/DBus; interface=org.freedesktop.DBus; member=NameOwnerChanged
+   string ":1.147"
+   string ""
+   string ":1.147"
+method call sender=:1.147 -> dest=org.freedesktop.DBus serial=1 path=/org/freedesktop/DBus; interface=org.freedesktop.DBus; member=Hello
+signal sender=org.freedesktop.DBus -> dest=(null destination) serial=31 path=/org/freedesktop/DBus; interface=org.freedesktop.DBus; member=NameOwnerChanged
+   string "com.nokia.osso-filemanager"
+   string ""
+   string ":1.147"
+method call sender=:1.147 -> dest=org.freedesktop.DBus serial=2 path=/org/freedesktop/DBus; interface=org.freedesktop.DBus; member=RequestName
+   string "com.nokia.osso-filemanager"
+   uint32 1
+method call sender=:1.147 -> dest=com.nokia.calendar serial=3 path=/com/nokia/calendar; interface=com.nokia.calendar; member=mime_open
+   string "file:///home/user/.todoy/todoy.ics"
+method call sender=:1.147 -> dest=com.nokia.HildonDesktop.AppMgr serial=4 path=/com/nokia/HildonDesktop/AppMgr; interface=com.nokia.HildonDesktop.AppMgr; member=LaunchApplication
+   string ""
+method return sender=:1.35 -> dest=:1.147 reply_serial=4
+method return sender=:1.144 -> dest=:1.147 reply_serial=3
+error sender=:1.144 -> dest=:1.147 error_name=org.freedesktop.DBus.Error.UnknownMethod reply_serial=3
+   string "Method "mime_open" with signature "s" on interface "com.nokia.calendar" doesn't exist
+"

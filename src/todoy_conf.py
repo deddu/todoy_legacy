@@ -37,6 +37,8 @@ class todoy_config():
 	self.default_mode = "auto"
 	self.cal_file="todoy.ics"
 	self.default_ev="EVENT"
+	self.pie_color=QtCore.Qt.green
+	self.pie_randcolor=True#False
 
 ################### granulometry #####################
 	self.g_rad_inner=100
@@ -47,7 +49,8 @@ class todoy_config():
 
 ################### sketch mode ######################
 	self.defaultpen_size=4
+	self.pen_color=QtCore.Qt.black
 	self.ellipse_opacity=0.15
 	self.font=QtGui.QFont("Arial", 15)
 	self.bkgrnd="todoy_bkgrnd.png"
-
+	self.colorlist=[QtCore.Qt.black,QtCore.Qt.red,QtCore.Qt.green,QtCore.Qt.blue,QtCore.Qt.yellow,QtCore.Qt.cyan,QtCore.Qt.magenta,QtCore.Qt.darkGreen,QtCore.Qt.darkRed,QtCore.Qt.darkBlue,QtCore.Qt.darkGray]

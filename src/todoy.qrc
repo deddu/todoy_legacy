@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="no">
+    <file>general_back.png</file>
+    <file>general_forward.png</file>
     <file>camera_delete.png</file>
     <file>control_personalization.png</file>
     <file>widgets_time_editor.png</file>

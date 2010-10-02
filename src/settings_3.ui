@@ -89,18 +89,52 @@
       <item row="5" column="1">
        <widget class="QFontComboBox" name="fontComboBox"/>
       </item>
-      <item row="3" column="1">
-       <widget class="QLabel" name="label_7">
-        <property name="text">
-         <string>(requires auto mode)</string>
-        </property>
-       </widget>
-      </item>
       <item row="3" column="0">
        <widget class="QCheckBox" name="checkBox_2">
         <property name="text">
          <string>sync with calendar</string>
         </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLabel" name="label_7">
+        <property name="text">
+         <string> default pie color</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QComboBox" name="comboBox_3">
+        <item>
+         <property name="text">
+          <string>green</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>red</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>blue</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>yellow</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>gray</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>random</string>
+         </property>
+        </item>
        </widget>
       </item>
      </layout>
@@ -254,24 +288,76 @@ p, li { white-space: pre-wrap; }
         <item row="2" column="1">
          <widget class="QDoubleSpinBox" name="doubleSpinBox_15"/>
         </item>
-        <item row="3" column="0">
+        <item row="4" column="0">
          <widget class="QLabel" name="piecolorLabel">
           <property name="text">
-           <string>piecolor</string>
+           <string>pen color</string>
           </property>
          </widget>
         </item>
-        <item row="3" column="1">
-         <widget class="QLineEdit" name="piecolorLineEdit"/>
-        </item>
-        <item row="4" column="1">
-         <widget class="QLineEdit" name="backgroundTemplateLineEdit"/>
-        </item>
-        <item row="4" column="0">
+        <item row="5" column="0">
          <widget class="QLabel" name="backgroundTemplateLabel">
           <property name="text">
            <string>background template</string>
           </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QComboBox" name="comboBox_2">
+          <item>
+           <property name="text">
+            <string>black</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>white</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>green</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>red</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>blue</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>yellow</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="5" column="1">
+         <widget class="QComboBox" name="comboBox_4">
+          <item>
+           <property name="text">
+            <string>default</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>lines</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>big</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>HUGE</string>
+           </property>
+          </item>
          </widget>
         </item>
        </layout>

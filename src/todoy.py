@@ -44,7 +44,7 @@ class Main(QMainWindow):
 	 self.loadsettings()
 	 self.settings=Settings(self)
 	 self.settings.hide()
-	 
+	 self.synced=False
 
  	 self.cal=todoy_calsync.cal_handling(self.conf)
 	 self.todoypage=TodoyPage(self,self.conf)
@@ -99,11 +99,19 @@ class Main(QMainWindow):
 		#self.conf=cPickle.load(conf)
    def on_actionSync_triggered(self):
 	import os
+	import dbus
 	self.cal.parse_events()
 	try:
-	    os.system('dbus-send --type=method_call --dest=com.nokia.calendar /com/nokia/calendar com.nokia.calendar.mime_open string:"file:///home/user/.todoy/.todoy"')
-	except: print "you should be using me on maemo5"
-
+		bus=dbus.SessionBus()
+		proxy=bus.get_object('com.nokia.calendar','/com/nokia/calendar')
+		iface=dbus.Interface(proxy,'com.nokia.calendar')
+		iface.mime_open('file:///home/user/.todoy/todoy.ics')
+		self.synced=True
+		#self.cal.cal_clear()
+	    #os.system('dbus-send --type=method_call --dest=com.nokia.calendar /com/nokia/calendar com.nokia.calendar.mime_open string:"file:///home/user/.todoy/.todoy"')
+	except: 
+		print "you should be using me on maemo5"
+		self.synced=False
 
    def on_actionSettings_triggered(self):
 	#self.settings=Settings(self)
@@ -120,7 +128,7 @@ class Main(QMainWindow):
    def on_actionAbout_triggered(self):
 	pass
    def on_actionQuit_triggered(self):
-	QApplication.exit(0)
+	self.close()
 
    def setmode0(self):
         self.ui.stackedWidget.setCurrentIndex(0)
@@ -135,7 +143,7 @@ class Main(QMainWindow):
 	#if QKeyEvent.matches (self, QKeySequence.StandardKey)
 	if QKeyEvent.key()==Qt.Key_Q:
 		print "ye" #implement close!
-		QApplication.exit(0)
+		self.close()#QApplication.exit(0)
 	elif QKeyEvent.key()==Qt.Key_B:
 		self.todoypage.pen = QPen(Qt.blue, 4, Qt.SolidLine)
 		#self.update()
@@ -184,10 +192,19 @@ class Main(QMainWindow):
 	self.todoypage.openPixmap(self.conf.bkgrnd)
 
 
+
+   def closeEvent(self,ev):
+	if self.synced: 
+		self.cal.cal_clear()
+		print "cal cleared on exit"
+	ev.accept()
+
+
 def main():
      app = QApplication(sys.argv)
      window=Main()
      window.show()
+     
      sys.exit(app.exec_())
 
 

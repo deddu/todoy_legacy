@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Todoy Widget
+Comment=Todoy Widget
+Type=python
+X-Path=todoy_widget.py
+X-home-applet-minwidth=400
+X-home-applet-minheight=250

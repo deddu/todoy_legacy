@@ -74,6 +74,8 @@ class Main(QMainWindow):
 	 QObject.connect(self.ui.toolButton_save, SIGNAL("pressed()"), 	self.cal.parse_events)#save
 #	 QObject.connect(self.ui.toolButton_3, SIGNAL("pressed()"), self.setmode0)
 	 #self.ui.menuSettings=QAction(self.tr('Configure'), self)
+#	 self.ui.toolButton_2.clicked.connect(self.plusday)
+#	 self.ui.toolButton_4.clicked.connect(self.minusday)
 
 
 
@@ -88,9 +90,14 @@ class Main(QMainWindow):
 	#print "clos"
 	#self.loadsettings()
 
+#   def plusday(self):
+#	self.date= self.date+1
+#   def minusday(self):
+#	self.date= self.date-1
+
 
    def loadsettings(self):
-	 #import os, cPickle
+	 #import os, cPickle		self.conf.pen_color = Qt.blue
 	 #conffile="todoy.conf"#"/home/user/.todoy/todoy.conf"
 	 #if not os.path.exists(conffile):
 	 self.conf=todoy_config()
@@ -145,20 +152,26 @@ class Main(QMainWindow):
 		print "ye" #implement close!
 		self.close()#QApplication.exit(0)
 	elif QKeyEvent.key()==Qt.Key_B:
-		self.todoypage.pen = QPen(Qt.blue, 4, Qt.SolidLine)
+		self.conf.pen_color = Qt.blue
 		#self.update()
 	elif QKeyEvent.key()==Qt.Key_R:
-		self.todoypage.pen = QPen(Qt.red, 4, Qt.SolidLine)
+		self.conf.pen_color = Qt.red
 		#self.update()
 	elif QKeyEvent.key()==Qt.Key_G:
-		self.todoypage.pen = QPen(Qt.green, 4, Qt.SolidLine)
+		self.conf.pen_color = Qt.green
 		#self.update()
 	elif QKeyEvent.key()==Qt.Key_K:
-		self.todoypage.pen = QPen(Qt.black, 4, Qt.SolidLine)
-	elif QKeyEvent.key()==Qt.Key_C:
+		self.conf.pen_color = Qt.black
+	elif QKeyEvent.key()==Qt.Key_D:
 		self.clear()
 	elif QKeyEvent.key()==Qt.Key_W:
-		self.todoypage.pen = QPen(Qt.white, 10, Qt.SolidLine)
+		self.conf.pen_color = Qt.white
+	elif QKeyEvent.key()==Qt.Key_Y:
+		self.conf.pen_color = Qt.yellow
+	elif QKeyEvent.key()==Qt.Key_C:
+		self.conf.pen_color = Qt.cyan
+	elif QKeyEvent.key()==Qt.Key_M:
+		self.conf.pen_color = Qt.magenta
 	elif QKeyEvent.key()==Qt.Key_Z:
 		self.todoypage.undo()
 	elif QKeyEvent.key()==Qt.Key_S:

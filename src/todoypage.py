@@ -90,10 +90,7 @@ class TodoyPage(QWidget):
    def paintEvent(self, ev):
         p = QPainter(self)
 	#today=strftime("%a, %d %b %Y",gmtime())
-        p.setFont(self.parent.conf.font)#QFont("Arial", 15))
-        p.drawText(20,50, self.date)
-	infos=("Q: Quit, C: Clear, B: Blue, R: Red, G: Green, K: Black, Z: Undo.")
-	if self.inputmode=="sketch":p.drawText(20,90, infos)
+        
 	self.pen.setColor(self.parent.conf.pen_color)#QPen()
 	self.pen.setWidth(self.parent.conf.defaultpen_size)
 	pen=self.pen
@@ -113,7 +110,10 @@ class TodoyPage(QWidget):
 		#p.setPen(self.draftPen)
 	 	self.paintAuto(p)
 
-
+	p.setFont(self.parent.conf.font)#QFont("Arial", 15))
+        p.drawText(20,20, self.date)
+	infos=("Q: Quit, C/U: Clear/Undo, S/L:save/load, W-CYMK-RGB: colors")
+	if self.inputmode=="sketch":p.drawText(20,50, infos)
 	p.end()
 	
    def mousePressEvent(self,ev):
@@ -307,7 +307,7 @@ class TodoyPage(QWidget):
    def color(self):
 	from random import choice
 	color=choice(self.colorlist)#[Qt.blue,Qt.black,Qt.red,Qt.green])
-	self.pen.setColor(color)
+	self.parent.conf.pen_color=color
 		
    def setdate(self, date):
 	self.date=date.toString("yyyyMMdd")

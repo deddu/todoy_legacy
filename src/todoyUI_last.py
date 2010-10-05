@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'another_5.ui'
+# Form implementation generated from reading ui file 'another_4.ui'
 #
-# Created: Sun Oct  3 08:28:44 2010
+# Created: Sun Oct  3 10:03:15 2010
 #      by: PyQt4 UI code generator 4.7.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -125,25 +125,6 @@ class Ui_MainWindow(object):
         self.dateEdit_2.setObjectName("dateEdit_2")
         self.horizontalLayout_5.addWidget(self.dateEdit_2)
         self.stackedWidget.addWidget(self.page_4)
-        self.horizontalLayoutWidget = QtGui.QWidget(self.centralwidget)
-        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(-1, 120, 801, 80))
-        self.horizontalLayoutWidget.setObjectName("horizontalLayoutWidget")
-        self.horizontalLayout_2 = QtGui.QHBoxLayout(self.horizontalLayoutWidget)
-        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        self.toolButton_2 = QtGui.QToolButton(self.horizontalLayoutWidget)
-        icon6 = QtGui.QIcon()
-        icon6.addPixmap(QtGui.QPixmap(":/no/general_back.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.toolButton_2.setIcon(icon6)
-        self.toolButton_2.setObjectName("toolButton_2")
-        self.horizontalLayout_2.addWidget(self.toolButton_2)
-        spacerItem1 = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
-        self.horizontalLayout_2.addItem(spacerItem1)
-        self.toolButton_4 = QtGui.QToolButton(self.horizontalLayoutWidget)
-        icon7 = QtGui.QIcon()
-        icon7.addPixmap(QtGui.QPixmap(":/no/general_forward.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.toolButton_4.setIcon(icon7)
-        self.toolButton_4.setObjectName("toolButton_4")
-        self.horizontalLayout_2.addWidget(self.toolButton_4)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtGui.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 37))
@@ -183,8 +164,6 @@ class Ui_MainWindow(object):
         self.toolButton_trash.setText(QtGui.QApplication.translate("MainWindow", "...", None, QtGui.QApplication.UnicodeUTF8))
         self.toolButton_save.setText(QtGui.QApplication.translate("MainWindow", "...", None, QtGui.QApplication.UnicodeUTF8))
         self.toolButton_3.setText(QtGui.QApplication.translate("MainWindow", "...", None, QtGui.QApplication.UnicodeUTF8))
-        self.toolButton_2.setText(QtGui.QApplication.translate("MainWindow", "...", None, QtGui.QApplication.UnicodeUTF8))
-        self.toolButton_4.setText(QtGui.QApplication.translate("MainWindow", "...", None, QtGui.QApplication.UnicodeUTF8))
         self.menuSettings.setTitle(QtGui.QApplication.translate("MainWindow", "&Zettings", None, QtGui.QApplication.UnicodeUTF8))
         self.actionSettings.setText(QtGui.QApplication.translate("MainWindow", "&preferences", None, QtGui.QApplication.UnicodeUTF8))
         self.actionAbout.setText(QtGui.QApplication.translate("MainWindow", "&about", None, QtGui.QApplication.UnicodeUTF8))

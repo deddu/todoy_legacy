@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'settings_3.ui'
 #
-# Created: Sat Oct  2 14:23:02 2010
+# Created: Sat Oct  9 08:35:28 2010
 #      by: PyQt4 UI code generator 4.7.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -99,6 +99,7 @@ class Ui_Form(object):
         self.formLayout_6.setWidget(2, QtGui.QFormLayout.FieldRole, self.spinBox_11)
         self.gridLayout.addLayout(self.formLayout_6, 1, 0, 1, 1)
         self.formLayout_7 = QtGui.QFormLayout()
+        self.formLayout_7.setFieldGrowthPolicy(QtGui.QFormLayout.AllNonFixedFieldsGrow)
         self.formLayout_7.setObjectName("formLayout_7")
         self.label_15 = QtGui.QLabel(self.layoutWidget)
         self.label_15.setObjectName("label_15")
@@ -112,6 +113,12 @@ class Ui_Form(object):
         self.spinBox_13 = QtGui.QSpinBox(self.layoutWidget)
         self.spinBox_13.setObjectName("spinBox_13")
         self.formLayout_7.setWidget(1, QtGui.QFormLayout.FieldRole, self.spinBox_13)
+        self.timeintervalLabel = QtGui.QLabel(self.layoutWidget)
+        self.timeintervalLabel.setObjectName("timeintervalLabel")
+        self.formLayout_7.setWidget(2, QtGui.QFormLayout.LabelRole, self.timeintervalLabel)
+        self.startTimeEdit = QtGui.QTimeEdit(self.layoutWidget)
+        self.startTimeEdit.setObjectName("startTimeEdit")
+        self.formLayout_7.setWidget(2, QtGui.QFormLayout.FieldRole, self.startTimeEdit)
         self.gridLayout.addLayout(self.formLayout_7, 1, 1, 1, 1)
         self.stackedWidget.addWidget(self.page_2)
         self.page_4 = QtGui.QWidget()
@@ -160,7 +167,6 @@ class Ui_Form(object):
         self.comboBox_4.addItem("")
         self.comboBox_4.addItem("")
         self.comboBox_4.addItem("")
-        self.comboBox_4.addItem("")
         self.formLayout_5.setWidget(5, QtGui.QFormLayout.FieldRole, self.comboBox_4)
         self.horizontalLayout.addLayout(self.formLayout_5)
         self.stackedWidget.addWidget(self.page_4)
@@ -184,7 +190,7 @@ class Ui_Form(object):
         self.horizontalLayout_2.addWidget(self.buttonBox)
 
         self.retranslateUi(Form)
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
     def retranslateUi(self, Form):
@@ -218,6 +224,7 @@ class Ui_Form(object):
         self.label_14.setText(QtGui.QApplication.translate("Form", "outer", None, QtGui.QApplication.UnicodeUTF8))
         self.label_15.setText(QtGui.QApplication.translate("Form", "inner", None, QtGui.QApplication.UnicodeUTF8))
         self.label_16.setText(QtGui.QApplication.translate("Form", "middle", None, QtGui.QApplication.UnicodeUTF8))
+        self.timeintervalLabel.setText(QtGui.QApplication.translate("Form", "starttime", None, QtGui.QApplication.UnicodeUTF8))
         self.sketchModePreferencesLabel.setText(QtGui.QApplication.translate("Form", "sketch mode preferences:", None, QtGui.QApplication.UnicodeUTF8))
         self.label_17.setText(QtGui.QApplication.translate("Form", "pen size", None, QtGui.QApplication.UnicodeUTF8))
         self.label_18.setText(QtGui.QApplication.translate("Form", "pie opacity", None, QtGui.QApplication.UnicodeUTF8))
@@ -231,9 +238,8 @@ class Ui_Form(object):
         self.comboBox_2.setItemText(5, QtGui.QApplication.translate("Form", "yellow", None, QtGui.QApplication.UnicodeUTF8))
         self.comboBox_4.setItemText(0, QtGui.QApplication.translate("Form", "default", None, QtGui.QApplication.UnicodeUTF8))
         self.comboBox_4.setItemText(1, QtGui.QApplication.translate("Form", "lines", None, QtGui.QApplication.UnicodeUTF8))
-        self.comboBox_4.setItemText(2, QtGui.QApplication.translate("Form", "fancy", None, QtGui.QApplication.UnicodeUTF8))
-        self.comboBox_4.setItemText(3, QtGui.QApplication.translate("Form", "big", None, QtGui.QApplication.UnicodeUTF8))
-        self.comboBox_4.setItemText(4, QtGui.QApplication.translate("Form", "HUGE", None, QtGui.QApplication.UnicodeUTF8))
+        self.comboBox_4.setItemText(2, QtGui.QApplication.translate("Form", "big", None, QtGui.QApplication.UnicodeUTF8))
+        self.comboBox_4.setItemText(3, QtGui.QApplication.translate("Form", "HUGE", None, QtGui.QApplication.UnicodeUTF8))
         self.commandLinkButton_7.setText(QtGui.QApplication.translate("Form", "auto mode", None, QtGui.QApplication.UnicodeUTF8))
         self.commandLinkButton_15.setText(QtGui.QApplication.translate("Form", "granulometry", None, QtGui.QApplication.UnicodeUTF8))
         self.commandLinkButton_9.setText(QtGui.QApplication.translate("Form", "sketch mode", None, QtGui.QApplication.UnicodeUTF8))

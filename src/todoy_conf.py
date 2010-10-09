@@ -46,7 +46,7 @@ class todoy_config():
 	self.g_scale_inner=15
 	self.g_scale_middle=5
 	self.g_scale_outer=1
-
+	self.starttime=QtCore.QTime(8,0)
 ################### sketch mode ######################
 	self.defaultpen_size=4
 	self.pen_color=QtCore.Qt.black

@@ -83,6 +83,8 @@ class Settings(QWidget):
 	 self.ui.spinBox_11.valueChanged.connect(self.setgran_out)
 	 self.ui.spinBox_12.valueChanged.connect(self.setrad_inn)
 	 self.ui.spinBox_13.valueChanged.connect(self.setrad_mid)
+	 self.ui.startTimeEdit.setTime(self.tempconf.starttime)
+	 self.ui.startTimeEdit.timeChanged.connect(self.setStartTime)
  #page3 date
 
  #page4 sketch
@@ -112,7 +114,6 @@ class Settings(QWidget):
 	self.hide()
 	#self.loadsettings()
 	#Settings.close(self)
-
 
    def showpage_auto(self):
         self.ui.stackedWidget.setCurrentIndex(0)
@@ -179,12 +180,14 @@ class Settings(QWidget):
    def setgran_mid(self,value):
 	self.tempconf.g_scale_middle=value
    def setgran_out(self,value):
-	self.g_scale_outer=value
+	self.tempconf.g_scale_outer=value
    def setrad_inn(self,value):
-	self.g_rad_inner=value
+	self.tempconf.g_rad_inner=value
    def setrad_mid(self,value):
-	self.g_rad_middle=value
-
+	self.tempconf.g_rad_middle=value
+   def setStartTime(self,value):
+	self.tempconf.starttime=value
+	print value
 # page 3 ##############################################################
 # page 4 ##############################################################
    def setbkgrnd(self, index):

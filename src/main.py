@@ -46,14 +46,14 @@ class Main(QMainWindow):
 	 self.settings=Settings(self)
 	 self.settings.hide()
 	 self.synced=False
-	 self.date=datetime.date.today()
+	 self.currentdate=datetime.date.today()
 	 self.delta=datetime.timedelta(1)
 
  	 self.cal=todoy_calsync.cal_handling(self.conf)
 	 self.todoypage=TodoyPage(self,self.conf)
 	 eee=strftime("%Y%m%d",gmtime())
 	 today=QDate.fromString(eee,"yyyyMMdd")
-	 self.ui.dateEdit.setDate(today)
+	 self.ui.dateEdit.setDate(self.currentdate)#today)
 	 self.ui.dateEdit.setDisplayFormat("dd.MM.yy")
 	 #self.ui.dateEdit_2.setDate(today)
 	 #self.ui.dateEdit_2.setDisplayFormat("yyyy.MM.dd")
@@ -94,11 +94,11 @@ class Main(QMainWindow):
 	#self.loadsettings()
 
    def plusday(self):
-	self.date= self.date+self.delta
-	self.ui.dateEdit.setDate(self.date)
+	self.currentdate= self.currentdate+self.delta
+	self.ui.dateEdit.setDate(self.currentdate)
    def minusday(self):
-	self.date=self.date-self.delta
-	self.ui.dateEdit.setDate(self.date)
+	self.currentdate=self.currentdate-self.delta
+	self.ui.dateEdit.setDate(self.currentdate)
 
 
    def loadsettings(self):
@@ -206,6 +206,7 @@ class Main(QMainWindow):
    def confirm(self):
 	self.todoypage.validate()
 	self.cal_add()
+	self.ui.lineEdit.setText("")
    def clear(self):
 	self.todoypage.openPixmap(self.conf.bkgrnd)
 

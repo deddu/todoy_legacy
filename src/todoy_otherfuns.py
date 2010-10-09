@@ -74,6 +74,27 @@ def time_conv(time, step=1):
 	when=when[-4:]
 	return when#hours, minutes
 
+def time_conv2(time, step=1, starttime=8):
+	from math import floor
+	excess=time-floor(time)
+	spareh=0
+	minutes=(round((60/step)*excess)*step)%60
+	#looks ugly but it works: rounding the first part generate an int between 0 and 60/step. then multiplying by step after rounding grants that 		the time will be again in minutes. and the final modulo accounts that there are no difference between 60 and 00. 
+	#print minutes
+	#if excess>=0.60: spareh=1
+	hours=floor((time+spareh)%12)#%24) 
+	if hours<starttime:
+		hours=hours+12
+	#print hours, minutes
+	mins="0"+str(int(minutes))
+	mins=mins[-2:]
+	when="0"+str(int(hours))+mins
+	when=when[-4:]
+	return when#hours, minutes
+
+
+
+
 def angles(self):
 	oOp1=self.angles_from_pos(self.p1, self.orig)
 	oOp2=self.angles_from_pos(self.p2, self.orig)

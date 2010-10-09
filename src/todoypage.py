@@ -311,10 +311,10 @@ class TodoyPage(QWidget):
 		
    def setdate(self, date):
 	self.date=date.toString("yyyyMMdd")
-	#check if a file already exist, then, if not
-	self.parent.clear()
+	self.openPixmap(self.parent.conf.bkgrnd)
+	self.load()
 	print self.date
-	#self.update()
+	self.update()
 
    def validate(self):
 	self.paintToPixmap()
@@ -344,10 +344,12 @@ class TodoyPage(QWidget):
 	self.span_angle= (oOp1+oOp2) # should check this one for various cases
 
    def angles_time(self, step):
-	from todoy_otherfuns import time_conv
+	from todoy_otherfuns import time_conv2
 	self.angles()
-	self.t0=((self.start_angle+90)/30)%12 #yep!
+	self.t0=((self.start_angle+90)/30)%12 #yep! 
 	self.t1=((self.span_angle-self.start_angle+90)/30)%12#yep!
-	self.t0=time_conv(self.t0, step)
-	self.t1=time_conv(self.t1, step)
+#	self.t0=time_conv(self.t0, step) #+ self.parent.conf.starttime[0]
+#	self.t1=time_conv(self.t1, step) #+ self.parent.conf.starttime[0]
+	self.t0=time_conv2(self.t0, step, self.parent.conf.starttime.hour()) #+ self.parent.conf.starttime[0]
+	self.t1=time_conv2(self.t1, step, self.parent.conf.starttime.hour()) #+ self.parent.conf.starttime[0]
 

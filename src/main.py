@@ -50,7 +50,7 @@ class Main(QMainWindow):
 	 self.delta=datetime.timedelta(1)
 
  	 self.cal=todoy_calsync.cal_handling(self.conf)
-	 self.todoypage=TodoyPage(self,self.conf)
+	 self.todoypage=TodoyPage(self,self.conf)#settings=QSettings("sofago.net","todoy")
 	 eee=strftime("%Y%m%d",gmtime())
 	 today=QDate.fromString(eee,"yyyyMMdd")
 	 self.ui.dateEdit.setDate(self.currentdate)#today)
@@ -105,10 +105,36 @@ class Main(QMainWindow):
 	 #import os, cPickle		self.conf.pen_color = Qt.blue
 	 #conffile="todoy.conf"#"/home/user/.todoy/todoy.conf"
 	 #if not os.path.exists(conffile):
-	 self.conf=todoy_config()
-	 #else: 
-		#conf=open(conffile, 'r+b')
-		#self.conf=cPickle.load(conf)
+	#try:
+	settings=QSettings("sofago.net","todoy")
+	self.conf=todoy_config()
+	success=True
+	self.conf.user_path=str(settings.value("user_path","").toString())#""#"/home/user/.todoy/"
+	self.conf.install_path=str(settings.value("install_path","/opt/todoy/").toString())
+	self.conf.cal_sync= settings.value("cal_sync",True).toBool()
+	self.conf.default_mode = str(settings.value("default_mode","auto").toString())
+	self.conf.cal_file=str(settings.value("cal_file","todoy.ics").toString())
+	self.conf.default_ev=str(settings.value("default_ev","EVENT").toString())
+	piecolor,success=settings.value("pie_color", Qt.green).toInt()
+	self.conf.pie_color=Qt.GlobalColor(piecolor)#QtCore.Qt.green
+	self.conf.pie_randcolor=settings.value("pie_randcolor", True).toBool()#True#False
+
+	self.conf.g_rad_inner,success=settings.value("g_rad_inner",100).toInt()#100
+	self.conf.g_rad_middle,success=settings.value("g_rad_middle",200).toInt()#200
+	self.conf.g_scale_inner,success=settings.value("g_scale_inner",15).toInt()#15
+	self.conf.g_scale_middle,success=settings.value("g_scale_middle",5).toInt()#5
+	self.conf.g_scale_outer,success=settings.value("g_scale_outer",1).toInt()#1
+	self.conf.starttime=settings.value("starttime",QTime(8,0)).toTime()
+	self.conf.defaultpen_size,success=settings.value("defaultpen_size",4).toInt()#4
+	pencolor,success=settings.value("pen_color", Qt.black).toInt()
+	self.conf.pen_color=Qt.GlobalColor(pencolor)
+	self.conf.ellipse_opacity,success=settings.value("ellipse_opacity",0.15).toFloat()#0.15
+	self.conf.font=QFont(settings.value("font",QFont("Arial", 15)))
+	self.conf.bkgrnd=str(settings.value("bkgrnd","todoy_bkgrnd.png").toString())#"todoy_bkgrnd.png"
+#	self.conf.colorlist=
+
+
+
    def on_actionSync_triggered(self):
 	import os
 	import dbus
@@ -211,8 +237,38 @@ class Main(QMainWindow):
 	self.todoypage.openPixmap(self.conf.bkgrnd)
 
 
+   def savesettings(self):
+	settings=QSettings("sofago.net","todoy")
+	#settings.setValue("conf",self.conf)
+	success=True
+	settings.setValue("user_path",	self.conf.user_path)
+	settings.setValue("install_path",self.conf.install_path)
+	settings.setValue("cal_sync",self.conf.cal_sync)
+	settings.setValue("default_mode",self.conf.default_mode)
+	settings.setValue("cal_file",self.conf.cal_file)
+	settings.setValue("default_ev",self.conf.default_ev)
+	settings.setValue("pie_color", self.conf.pie_color)
+	settings.setValue("pie_randcolor",self.conf.pie_randcolor)#True#False
+	settings.setValue("g_rad_inner",self.conf.g_rad_inner)#100
+	settings.setValue("g_rad_middle",self.conf.g_rad_middle)#200
+	settings.setValue("g_scale_inner",self.conf.g_scale_inner)
+	settings.setValue("g_scale_middle",self.conf.g_scale_middle)#5
+	settings.setValue("g_scale_outer",self.conf.g_scale_outer)#1
+	settings.setValue("starttime",self.conf.starttime)
+	settings.setValue("defaultpen_size",self.conf.defaultpen_size)#4
+	settings.setValue("pen_color", self.conf.pen_color)#QtCore.Qt.black
+	settings.setValue("ellipse_opacity",self.conf.ellipse_opacity)#0.15
+	settings.setValue("font",self.conf.font)
+	settings.setValue("bkgrnd",self.conf.bkgrnd)#"todoy_bkgrnd.png"
+#	self.conf.colorlist=
+
+
 
    def closeEvent(self,ev):
+	self.savesettings()
+	#settings=QSettings("sofago.net","todoy")
+	#settings.setValue("conf",self.conf)
+	print"ok"
 	if self.synced: 
 		self.cal.cal_clear()
 		print "cal cleared on exit"

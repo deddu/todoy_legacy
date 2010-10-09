@@ -348,8 +348,6 @@ class TodoyPage(QWidget):
 	self.angles()
 	self.t0=((self.start_angle+90)/30)%12 #yep! 
 	self.t1=((self.span_angle-self.start_angle+90)/30)%12#yep!
-#	self.t0=time_conv(self.t0, step) #+ self.parent.conf.starttime[0]
-#	self.t1=time_conv(self.t1, step) #+ self.parent.conf.starttime[0]
 	self.t0=time_conv2(self.t0, step, self.parent.conf.starttime.hour()) #+ self.parent.conf.starttime[0]
 	self.t1=time_conv2(self.t1, step, self.parent.conf.starttime.hour()) #+ self.parent.conf.starttime[0]
 

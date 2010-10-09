@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'another_5.ui'
 #
-# Created: Sun Oct  3 08:28:44 2010
+# Created: Tue Oct  5 08:20:44 2010
 #      by: PyQt4 UI code generator 4.7.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -115,35 +115,19 @@ class Ui_MainWindow(object):
         self.lineEdit.setMinimumSize(QtCore.QSize(0, 30))
         self.lineEdit.setObjectName("lineEdit")
         self.horizontalLayout_5.addWidget(self.lineEdit)
-        self.dateEdit_2 = QtGui.QDateEdit(self.widget_2)
-        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(40)
-        sizePolicy.setHeightForWidth(self.dateEdit_2.sizePolicy().hasHeightForWidth())
-        self.dateEdit_2.setSizePolicy(sizePolicy)
-        self.dateEdit_2.setMinimumSize(QtCore.QSize(0, 40))
-        self.dateEdit_2.setObjectName("dateEdit_2")
-        self.horizontalLayout_5.addWidget(self.dateEdit_2)
-        self.stackedWidget.addWidget(self.page_4)
-        self.horizontalLayoutWidget = QtGui.QWidget(self.centralwidget)
-        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(-1, 120, 801, 80))
-        self.horizontalLayoutWidget.setObjectName("horizontalLayoutWidget")
-        self.horizontalLayout_2 = QtGui.QHBoxLayout(self.horizontalLayoutWidget)
-        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        self.toolButton_2 = QtGui.QToolButton(self.horizontalLayoutWidget)
+        self.toolButton_2 = QtGui.QToolButton(self.widget_2)
         icon6 = QtGui.QIcon()
         icon6.addPixmap(QtGui.QPixmap(":/no/general_back.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.toolButton_2.setIcon(icon6)
         self.toolButton_2.setObjectName("toolButton_2")
-        self.horizontalLayout_2.addWidget(self.toolButton_2)
-        spacerItem1 = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
-        self.horizontalLayout_2.addItem(spacerItem1)
-        self.toolButton_4 = QtGui.QToolButton(self.horizontalLayoutWidget)
+        self.horizontalLayout_5.addWidget(self.toolButton_2)
+        self.toolButton_4 = QtGui.QToolButton(self.widget_2)
         icon7 = QtGui.QIcon()
         icon7.addPixmap(QtGui.QPixmap(":/no/general_forward.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.toolButton_4.setIcon(icon7)
         self.toolButton_4.setObjectName("toolButton_4")
-        self.horizontalLayout_2.addWidget(self.toolButton_4)
+        self.horizontalLayout_5.addWidget(self.toolButton_4)
+        self.stackedWidget.addWidget(self.page_4)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtGui.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 37))
@@ -163,9 +147,12 @@ class Ui_MainWindow(object):
         self.actionQuit.setObjectName("actionQuit")
         self.actionSync = QtGui.QAction(MainWindow)
         self.actionSync.setObjectName("actionSync")
+        self.actionJumpdate = QtGui.QAction(MainWindow)
+        self.actionJumpdate.setObjectName("actionJumpdate")
         self.menuSettings.addAction(self.actionSettings)
         self.menuSettings.addAction(self.actionSave)
         self.menuSettings.addAction(self.actionLoad)
+        self.menuSettings.addAction(self.actionJumpdate)
         self.menuSettings.addAction(self.actionAbout)
         self.menuSettings.addAction(self.actionSync)
         self.menuSettings.addAction(self.actionQuit)
@@ -192,6 +179,7 @@ class Ui_MainWindow(object):
         self.actionLoad.setText(QtGui.QApplication.translate("MainWindow", "&load", None, QtGui.QApplication.UnicodeUTF8))
         self.actionQuit.setText(QtGui.QApplication.translate("MainWindow", "quit", None, QtGui.QApplication.UnicodeUTF8))
         self.actionSync.setText(QtGui.QApplication.translate("MainWindow", "sync", None, QtGui.QApplication.UnicodeUTF8))
+        self.actionJumpdate.setText(QtGui.QApplication.translate("MainWindow", "jumpdate", None, QtGui.QApplication.UnicodeUTF8))
 
 import todoy_rc
 

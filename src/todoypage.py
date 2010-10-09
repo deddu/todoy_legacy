@@ -311,6 +311,8 @@ class TodoyPage(QWidget):
 		
    def setdate(self, date):
 	self.date=date.toString("yyyyMMdd")
+	#check if a file already exist, then, if not
+	self.parent.clear()
 	print self.date
 	#self.update()
 

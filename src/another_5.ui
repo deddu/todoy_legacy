@@ -225,71 +225,30 @@
         </widget>
        </item>
        <item>
-        <widget class="QDateEdit" name="dateEdit_2">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>40</verstretch>
-          </sizepolicy>
+        <widget class="QToolButton" name="toolButton_2">
+         <property name="text">
+          <string>...</string>
          </property>
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>40</height>
-          </size>
+         <property name="icon">
+          <iconset resource="todoy.qrc">
+           <normaloff>:/no/general_back.png</normaloff>:/no/general_back.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="toolButton_4">
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset resource="todoy.qrc">
+           <normaloff>:/no/general_forward.png</normaloff>:/no/general_forward.png</iconset>
          </property>
         </widget>
        </item>
       </layout>
      </widget>
     </widget>
-   </widget>
-   <widget class="QWidget" name="horizontalLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>-1</x>
-      <y>120</y>
-      <width>801</width>
-      <height>80</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout_2">
-     <item>
-      <widget class="QToolButton" name="toolButton_2">
-       <property name="text">
-        <string>...</string>
-       </property>
-       <property name="icon">
-        <iconset resource="todoy.qrc">
-         <normaloff>:/no/general_back.png</normaloff>:/no/general_back.png</iconset>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <spacer name="horizontalSpacer_2">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QToolButton" name="toolButton_4">
-       <property name="text">
-        <string>...</string>
-       </property>
-       <property name="icon">
-        <iconset resource="todoy.qrc">
-         <normaloff>:/no/general_forward.png</normaloff>:/no/general_forward.png</iconset>
-       </property>
-      </widget>
-     </item>
-    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -308,6 +267,7 @@
     <addaction name="actionSettings"/>
     <addaction name="actionSave"/>
     <addaction name="actionLoad"/>
+    <addaction name="actionJumpdate"/>
     <addaction name="actionAbout"/>
     <addaction name="actionSync"/>
     <addaction name="actionQuit"/>
@@ -342,6 +302,11 @@
   <action name="actionSync">
    <property name="text">
     <string>sync</string>
+   </property>
+  </action>
+  <action name="actionJumpdate">
+   <property name="text">
+    <string>jumpdate</string>
    </property>
   </action>
  </widget>

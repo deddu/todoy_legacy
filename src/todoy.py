@@ -51,9 +51,9 @@ class Main(QMainWindow):
 	 eee=strftime("%Y%m%d",gmtime())
 	 today=QDate.fromString(eee,"yyyyMMdd")
 	 self.ui.dateEdit.setDate(today)
-	 self.ui.dateEdit.setDisplayFormat("yyyy.MM.dd")
-	 self.ui.dateEdit_2.setDate(today)
-	 self.ui.dateEdit_2.setDisplayFormat("yyyy.MM.dd")
+	 self.ui.dateEdit.setDisplayFormat("dd.MM.yy")
+	 #self.ui.dateEdit_2.setDate(today)
+	 #self.ui.dateEdit_2.setDisplayFormat("yyyy.MM.dd")
 
 	 if 	self.conf.default_mode =="auto":
 		self.setmode1()
@@ -64,7 +64,7 @@ class Main(QMainWindow):
 	 #QObject.connect(self.ui.toolButton, SIGNAL("pressed()"), self.todoypage.setmode)editingFinished ()
 	 QObject.connect(self.ui.lineEdit, SIGNAL("textChanged(QString)"), self.todoypage.settext)
 	 QObject.connect(self.ui.dateEdit, SIGNAL("dateChanged(QDate)"),self.todoypage.setdate)
-	 QObject.connect(self.ui.dateEdit_2, SIGNAL("dateChanged(QDate)"),self.todoypage.setdate)
+	 #QObject.connect(self.ui.dateEdit_2, SIGNAL("dateChanged(QDate)"),self.todoypage.setdate)
  	 QObject.connect(self.ui.lineEdit, SIGNAL("editingFinished()"), self.confirm)
 	#ui key connections:
 	 QObject.connect(self.ui.toolButton_undo, SIGNAL("pressed()"), self.todoypage.undo)#undo

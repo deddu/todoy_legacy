@@ -28,6 +28,7 @@ from PyQt4 import *
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 from time import strftime, gmtime
+import datetime
 from todoyUI import Ui_MainWindow
 from todoypage import TodoyPage
 import todoy_calsync
@@ -45,15 +46,17 @@ class Main(QMainWindow):
 	 self.settings=Settings(self)
 	 self.settings.hide()
 	 self.synced=False
+	 self.date=datetime.date.today()
+	 self.delta=datetime.timedelta(1)
 
  	 self.cal=todoy_calsync.cal_handling(self.conf)
 	 self.todoypage=TodoyPage(self,self.conf)
 	 eee=strftime("%Y%m%d",gmtime())
 	 today=QDate.fromString(eee,"yyyyMMdd")
 	 self.ui.dateEdit.setDate(today)
-	 self.ui.dateEdit.setDisplayFormat("yyyy.MM.dd")
-	 self.ui.dateEdit_2.setDate(today)
-	 self.ui.dateEdit_2.setDisplayFormat("yyyy.MM.dd")
+	 self.ui.dateEdit.setDisplayFormat("dd.MM.yy")
+	 #self.ui.dateEdit_2.setDate(today)
+	 #self.ui.dateEdit_2.setDisplayFormat("yyyy.MM.dd")
 
 	 if 	self.conf.default_mode =="auto":
 		self.setmode1()
@@ -64,7 +67,7 @@ class Main(QMainWindow):
 	 #QObject.connect(self.ui.toolButton, SIGNAL("pressed()"), self.todoypage.setmode)editingFinished ()
 	 QObject.connect(self.ui.lineEdit, SIGNAL("textChanged(QString)"), self.todoypage.settext)
 	 QObject.connect(self.ui.dateEdit, SIGNAL("dateChanged(QDate)"),self.todoypage.setdate)
-	 QObject.connect(self.ui.dateEdit_2, SIGNAL("dateChanged(QDate)"),self.todoypage.setdate)
+	 #QObject.connect(self.ui.dateEdit_2, SIGNAL("dateChanged(QDate)"),self.todoypage.setdate)
  	 QObject.connect(self.ui.lineEdit, SIGNAL("editingFinished()"), self.confirm)
 	#ui key connections:
 	 QObject.connect(self.ui.toolButton_undo, SIGNAL("pressed()"), self.todoypage.undo)#undo
@@ -74,8 +77,8 @@ class Main(QMainWindow):
 	 QObject.connect(self.ui.toolButton_save, SIGNAL("pressed()"), 	self.cal.parse_events)#save
 #	 QObject.connect(self.ui.toolButton_3, SIGNAL("pressed()"), self.setmode0)
 	 #self.ui.menuSettings=QAction(self.tr('Configure'), self)
-#	 self.ui.toolButton_2.clicked.connect(self.plusday)
-#	 self.ui.toolButton_4.clicked.connect(self.minusday)
+	 self.ui.toolButton_2.clicked.connect(self.minusday)
+	 self.ui.toolButton_4.clicked.connect(self.plusday)
 
 
 
@@ -90,10 +93,12 @@ class Main(QMainWindow):
 	#print "clos"
 	#self.loadsettings()
 
-#   def plusday(self):
-#	self.date= self.date+1
-#   def minusday(self):
-#	self.date= self.date-1
+   def plusday(self):
+	self.date= self.date+self.delta
+	self.ui.dateEdit.setDate(self.date)
+   def minusday(self):
+	self.date=self.date-self.delta
+	self.ui.dateEdit.setDate(self.date)
 
 
    def loadsettings(self):

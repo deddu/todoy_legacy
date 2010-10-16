@@ -1,0 +1,12 @@
+Source: todoy
+Section: user/office
+Priority: extra
+Maintainer: Andrea Cadeddu <mrernia@gmail.com>
+Build-Depends: debhelper (>= 5)
+Standards-Version: 3.7.2
+
+Package: todoy
+Architecture: all
+Depends: python2.5, python-osso, python2.5-qt4-gui, python2.5-qt4-core, python2.5-qt4-maemo5
+Description: A fast revolutionary way to handle your duty and your appointments. With desktop widget and calendar export
+XSBC-Bugtracker: http://bugs.maemo.org

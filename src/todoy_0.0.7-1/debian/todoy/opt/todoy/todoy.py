@@ -109,7 +109,7 @@ class Main(QMainWindow):
 	settings=QSettings("sofago.net","todoy")
 	self.conf=todoy_config()
 	success=True
-	self.conf.user_path=str(settings.value("user_path","").toString())#""#"/home/user/.todoy/"
+	self.conf.user_path=str(settings.value("user_path","/home/user/.todoy/").toString())#""#"/home/user/.todoy/"
 	self.conf.install_path=str(settings.value("install_path","/opt/todoy/").toString())
 	self.conf.cal_sync= settings.value("cal_sync",True).toBool()
 	self.conf.default_mode = str(settings.value("default_mode","auto").toString())

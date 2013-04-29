@@ -42,6 +42,7 @@ class TodoyPage(QWidget):
 	 self.image = QImage()
 	 self.defpath=self.parent.conf.user_path#"/home/user/.todoy/"
 	 self.text=""
+	 
          #self.lastPoint = QPoint()
 	 self.setWindowTitle("Todoy")
          self.resize(800,350)
@@ -52,6 +53,7 @@ class TodoyPage(QWidget):
 	 self.p2 = QPoint(-1, -1)
          self.date=strftime("%Y%m%d",gmtime())
 	 self.colorlist=self.parent.conf.colorlist
+	 self.load()
 
    def openPixmap(self, fileName):
 	loadedPix=QPixmap()

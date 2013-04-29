@@ -1,22 +1,27 @@
 MAEMO5: todo:
-- eyecandy/trim GUI
+#- am/pm switch
+- current time-line
+- find a way to avoid double 00 in the same hour
 - widget optimization: size/centering
-- auto load if exist, else new. Idem 4 widget.
-- click on widget should open main app
-- widget auto-update
+- widget date is not changing automatically. (no clue)
+#- auto load on open if exist, else new. Idem 4 widget.
 - more undo levels
 - vect to possibly remove one at time
+- remove entries in cal with empty strings
+#- date select
+- move time labels while dragging (upper right)
 - sync w/calendar: via pycalai
 	-ics are ok, but time is referred to GMT.. 
 	-those damn timezones!
+- add dependencies: python2.5-hildon
 - possible alarms
 - create install/readme etc
+- custom path for conf.file
 - app menu:
-	-settings: fonts, theme, default mode
-	-settings: calendar integration on/off
+#	-permanent settings
 	-about: 
-- package, and repos
-- ui on maemo is too crowded. resize elements. 
+d=delete in text
+
 
 
 ANDROID VERSION:

@@ -61,6 +61,7 @@ class cal_handling():
 	f=open(self.filename,'a+b')
 	for item in self.eventlist:
 		if self.eventlist.count(item)>=2: self.eventlist.remove(item)
+		#if self.eventlist.count(None)>0: self.eventlist.remove(item)
 		date=item[0]
 		start=item[1]
 		end=item[2]
